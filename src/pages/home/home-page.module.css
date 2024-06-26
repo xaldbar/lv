@@ -1,0 +1,259 @@
+.homePage {
+    padding: 0 25px;
+    background-color: #2D2A2F;
+    min-height: 100vh;
+    color: white;
+    padding-bottom: 200px;
+}
+
+.intro {
+}
+
+.introTitle {
+    position: relative;
+    font-size: 130px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 256px;
+    z-index: 2;
+}
+
+.introTitle span {
+    z-index: 3;
+}
+
+.introCaption {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    margin-top: 47px;
+    flex-direction: column;
+}
+
+.introCaption div {
+    display: flex;
+    justify-content: center;
+}
+
+.bubble {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    background: linear-gradient(-180deg, rgba(158, 141, 223, 70%) 0%, rgba(181, 167, 236, 70%) 14%, rgba(115, 40, 234, 70%) 58%, rgba(79, 153, 222, 70%) 100%);
+    box-shadow: inset 30.264217376708984px -30.264217376708984px 30.264217376708984px 0px rgba(165, 165, 165, 7%), inset -30.264217376708984px 30.264217376708984px 30.264217376708984px 0px rgba(255, 255, 255, 7%);
+}
+
+.lb {
+    top: 100px;
+    left: 450px;
+    width: 389px;
+    height: 389px;
+    z-index: 1;
+}
+
+.mb {
+    height: 187px;
+    width: 187px;
+    top: 604px;
+    left: 908px;
+}
+
+.rb {
+    height: 558px;
+    width: 558px;
+    top: 310px;
+    left: 1500px;
+    z-index: 3;
+    backdrop-filter: blur(2px);
+}
+
+.bloom1 {
+    position: absolute;
+    top: -20px;
+}
+
+.bloom2 {
+    position: absolute;
+    top: 700px;
+    right: 0;
+    z-index: 1;
+}
+
+.bloom3 {
+    position: absolute;
+    bottom: -340px;
+    left: -25px;
+    z-index: 1;
+}
+
+.bloom1,
+.bloom2,
+.bloom3 {
+    user-select: none;
+    -webkit-user-select: none;  /* Для поддержки веб-кит браузеров */
+    -moz-user-select: none;     /* Для поддержки Firefox */
+    -ms-user-select: none;
+}
+
+.introInfo {
+    padding: 0 21px;
+    margin-top: 505px;
+    display: flex;
+    column-gap: 50px;
+    justify-content: space-between;
+}
+
+.introText {
+    max-width: 1053px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 19px;
+    font-size: 40px;
+    width: 100%;
+}
+
+.introText span {
+    font-weight: 600;
+}
+
+.block1,
+.block2,
+.block3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 25%);
+}
+
+.introBlocks {
+    display: flex;
+    column-gap: 24px;
+}
+
+.blocksWrapper {
+    width: 580px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.block1 {
+    background-color: #FFF;
+    padding: 34px 0;
+    color: #2D2A2F;
+    transition: all .3s ease-in-out;
+}
+
+.block1:hover,
+.block3:hover {
+    background-color: #2D2A2F;
+    color: #fff !important;
+}
+
+.block2 {
+    background-color: #2D2A2F;
+    padding: 34px 0;
+    transition: all .3s ease-in-out;
+}
+
+.block2:hover {
+    background-color: #fff;
+    color: #2D2A2F;
+}
+
+.block3 {
+    background-color: #FFF;
+    color: #2D2A2F;
+    max-width: 170px;
+    padding: 0 12px;
+    position: relative;
+    z-index: 2;
+    transition: all .3s ease-in-out;
+}
+
+.b1h {
+    font-size: 80px;
+
+    font-weight: 600;
+}
+
+.b1c {
+    font-size: 30px;
+}
+
+.b2h {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.b2c {
+    font-size: 30px;
+}
+
+.aboutB {
+    padding-top: 152px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.aboutBL,
+.aboutBR {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.aboutBL {
+    row-gap: 50px;
+}
+
+.aboutBR {
+    row-gap: 74px;
+    max-width: 600px;
+}
+
+.aboutBtn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 528px;
+    height: 59px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 40px;
+    border: 1px solid #fff;
+    background-color: #2D2A2F;
+    border-radius: 20px;
+    padding: 4px 20px;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.aboutBtn:hover {
+    background-color: #fff;
+    color: #2D2A2F;
+}
+
+.aboutBtnS {
+    margin-left: 185px;
+}
+
+.aboutBtnT {
+    margin-left: calc(185px + 309px);
+}
+
+.aboutBRT {
+    font-size: 40px;
+}
+.aboutBRT span {
+    font-weight: 600;
+}

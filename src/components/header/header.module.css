@@ -1,0 +1,73 @@
+.headerWrapper {
+    padding: 0 25px;
+    max-width: 100%;
+    height: 49px;
+    background-color: #2D2A2F;
+    color: #212121;
+    display: grid;
+    grid-template-columns: 4fr 10fr 4fr;
+    column-gap: 15px;
+    padding-top: 11px;
+}
+
+.menuButton {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    outline: 0;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.menuButtonImg {
+    width: 120px;
+    height: 11px;
+}
+
+.menuOptions {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding-top: 12px;
+}
+
+.menuContainer {
+    max-width: 100%;
+}
+
+.menuOptionsButton {
+    background-color: #2D2A2F;
+    border-radius: 20px;
+    color: #fff;
+    border: 1px solid #fff;
+    outline: 0;
+    height: 44px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.logo {
+    border: 0;
+    outline: none;
+    background-color: #6D57B1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.logo,
+.menuButton,
+.menuOptionsButton {
+    cursor: pointer;
+}
+
+.menuButton:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+}

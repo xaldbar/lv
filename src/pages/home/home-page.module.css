@@ -201,6 +201,7 @@
     padding-top: 152px;
     display: flex;
     justify-content: space-between;
+    column-gap: 20px;
 }
 
 .aboutBL,

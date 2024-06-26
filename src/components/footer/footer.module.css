@@ -79,6 +79,13 @@
     z-index: 1;
 }
 
+.bloom {
+    user-select: none;
+    -webkit-user-select: none;  /* Для поддержки веб-кит браузеров */
+    -moz-user-select: none;     /* Для поддержки Firefox */
+    -ms-user-select: none;
+}
+
 .bloom img {
     width: 100%;
     height: 100%;

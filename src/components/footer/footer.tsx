@@ -48,13 +48,13 @@ const Footer = () => {
 				<div className={styles.bottom}>
 					<button className={styles.submit}>Получить консультацию</button>
 					<div className={styles.logo}>
-						<img src="/src/assets/logo/logosvg.svg" alt=""/>
+						<img src="/public/logo/logosvg.svg" alt=""/>
 					</div>
 				</div>
 			</form>
 			<div className={styles.separator}></div>
 			<div className={styles.bloom}>
-				<img src="/src/assets/footer/bloom.svg"/>
+				<img src="/public/footer/bloom.svg"/>
 			</div>
 			<div className={`${styles.bubble} ${styles.lb}`}></div>
 			<div className={`${styles.bubble} ${styles.mb}`}></div>

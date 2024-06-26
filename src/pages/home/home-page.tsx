@@ -1,5 +1,7 @@
 import styles from './home-page.module.css'
-
+import bloom3 from '../../assets/intro/intro_bloom3.svg'
+import bloom2 from '../../assets/intro/intro_bloom2.svg'
+import bloom1 from '../../assets/intro/intro_bloom1.svg'
 const Intro = () => {
 	return (
 		<div className={styles.intro}>
@@ -54,7 +56,7 @@ const Intro = () => {
 					<button className={`${styles.aboutBtn} ${styles.aboutBtnS}`}>О компании</button>
 					<button className={`${styles.aboutBtn} ${styles.aboutBtnT}`}>Портфолио</button>
 					<div className={styles.bloom3}>
-						<img src="/public/intro/intro_bloom3.svg" alt=""/>
+						<img src={bloom3} alt=""/>
 					</div>
 				</div>
 				<div className={styles.aboutBR}>
@@ -63,10 +65,10 @@ const Intro = () => {
 				</div>
 			</div>
 			<div className={styles.bloom1}>
-				<img src="/public/intro/intro_bloom1.svg" alt=""/>
+				<img src={bloom1} alt=""/>
 			</div>
 			<div className={styles.bloom2}>
-				<img src="/public/intro/intro_bloom2.svg" alt=""/>
+				<img src={bloom2} alt=""/>
 			</div>
 		</div>
 	)

@@ -8,7 +8,8 @@ export interface InputProps {
 	label: string
 	pattern?: string
 }
-
+import logo from '../../assets/logo/logosvg.svg'
+import bloom from '../../assets/footer/bloom.svg'
 
 const FooterInput: FC<InputProps> = (props: InputProps) => {
 	return (
@@ -48,13 +49,13 @@ const Footer = () => {
 				<div className={styles.bottom}>
 					<button className={styles.submit}>Получить консультацию</button>
 					<div className={styles.logo}>
-						<img src="/public/logo/logosvg.svg" alt=""/>
+						<img src={logo} alt=""/>
 					</div>
 				</div>
 			</form>
 			<div className={styles.separator}></div>
 			<div className={styles.bloom}>
-				<img src="/public/footer/bloom.svg"/>
+				<img src={bloom}/>
 			</div>
 			<div className={`${styles.bubble} ${styles.lb}`}></div>
 			<div className={`${styles.bubble} ${styles.mb}`}></div>

@@ -1,5 +1,6 @@
 import styles from './header.module.css'
-
+import headerMenuButton from '../../assets/header-menu-button.svg'
+import logo from '../../assets/logo/logosvg.svg'
 
 import React, {useRef, useState} from 'react';
 import {useNavigate} from "react-router-dom";
@@ -27,7 +28,7 @@ const MenuButton: React.FC = () => {
 	return (
 		<div className={styles.menuContainer}>
 			<button onClick={toggleMenu} className={styles.menuButton}>
-				<img src={'/public/header-menu-button.svg'} className={styles.menuButtonImg}/>
+				<img src={headerMenuButton} className={styles.menuButtonImg}/>
 			</button>
 			{isMenuOpen && (
 				<div ref={menuRef} className={styles.menuOptions}>
@@ -54,7 +55,7 @@ const Header = () => {
 				Инвестировать
 			</button>
 			<button onClick={toHome} className={styles.logo}>
-				<img src={'/public/logo/logosvg.svg'} className={styles.logo}/>
+				<img src={logo} className={styles.logo}/>
 			</button>
 			<MenuButton/>
 		</div>

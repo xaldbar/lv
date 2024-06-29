@@ -14,7 +14,7 @@ const MenuButton: React.FC = () => {
 	};
 
 	const toHowToWork = () => {
-		navigate('/how-to-work')
+		navigate('/how-we-work')
 	}
 
 	const toAbout = () => {

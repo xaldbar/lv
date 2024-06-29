@@ -1,3 +1,111 @@
 .howWeWorkPage {
+    padding-top: 87px;
+    padding-left: 45px;
+    padding-right: 45px;
+    color: #fff;
+    margin-bottom: 137px;
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px 40px 26px;
+    background-color: #38343A;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 25%), 10px 10px 10px 0px rgba(0, 0, 0, 25%);
+    margin-bottom: 132px;
+    column-gap: 50px;
+}
+
+.textLeft {
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+    max-width: 840px;
+    line-height: 20px;
+}
+
+.textTitle {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.textText {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    font-size: 18px;
+}
+
+.ttItem {
+
+}
+
+.imageWrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.imageWrapper img {
+    width: 100%;
+}
+
+.animate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    animation: anim 5s  normal;
+    animation-iteration-count: 1;
+    height: 99%;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 77px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 50px;
+}
+
+.textBlock {
+    border-radius: 30px;
+    background-color: #38343A;
+    box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 25%), 10px 10px 10px 5px rgba(0, 0, 0, 25%);
+    padding: 23px 40px 76px 25px;
+    width: 915px;
+}
+
+.textBlockTitle {
+    font-size: 45px;
+    font-weight: 600;
+    margin-bottom: 54px;
+}
+
+.textBlockText {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    font-size: 18px;
+}
+
+.textBlockTextItem {
+
+}
+
+.rowImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowImage img {
 
 }

@@ -26,11 +26,15 @@
 }
 
 .introCaption {
+    position: relative;
+    z-index: 2;
     font-size: 35px;
     display: flex;
     justify-content: center;
+    text-align: center;
     margin-top: 47px;
     flex-direction: column;
+    position: relative;
 }
 
 .introCaption div {
@@ -46,26 +50,39 @@
     box-shadow: inset 30.264217376708984px -30.264217376708984px 30.264217376708984px 0px rgba(165, 165, 165, 7%), inset -30.264217376708984px 30.264217376708984px 30.264217376708984px 0px rgba(255, 255, 255, 7%);
 }
 
+.titleText {
+    position: relative;
+    z-index: 10;
+}
+
+.ttt {
+    color: #fff;
+}
+
 .lb {
-    top: 100px;
-    left: 450px;
+    top: -120px;
+    left: -150px;
     width: 389px;
     height: 389px;
-    z-index: 1;
+    z-index: -1;
 }
 
 .mb {
     height: 187px;
     width: 187px;
-    top: 604px;
-    left: 908px;
+    top: 100px;
+    left: 0;
+}
+
+.www {
+    position: relative;
 }
 
 .rb {
+    top: 75px;
+    right: -150px;
     height: 558px;
     width: 558px;
-    top: 310px;
-    left: 1500px;
     z-index: 3;
     backdrop-filter: blur(2px);
 }
@@ -73,6 +90,7 @@
 .bloom1 {
     position: absolute;
     top: -20px;
+    left: -45px;
 }
 
 .bloom2 {
@@ -92,10 +110,10 @@
 .bloom1,
 .bloom2,
 .bloom3 {
-    user-select: none;
-    -webkit-user-select: none;  /* Для поддержки веб-кит браузеров */
-    -moz-user-select: none;     /* Для поддержки Firefox */
-    -ms-user-select: none;
+    /*user-select: none;*/
+    /*-webkit-user-select: none;  !* Для поддержки веб-кит браузеров *!*/
+    /*-moz-user-select: none;     !* Для поддержки Firefox *!*/
+    /*-ms-user-select: none;*/
 }
 
 .introInfo {
@@ -107,6 +125,8 @@
 }
 
 .introText {
+    position: relative;
+    z-index: 2;
     max-width: 1053px;
     display: flex;
     flex-direction: column;
@@ -240,6 +260,16 @@
     z-index: 2;
 }
 
+.aboutBtn.invert {
+    background-color: #fff;
+    color: #2D2A2F;
+}
+
+.aboutBtn.invert:hover {
+    background-color: #2D2A2F;
+    color: #fff;
+}
+
 .aboutBtn:hover {
     background-color: #fff;
     color: #2D2A2F;
@@ -253,9 +283,91 @@
     margin-left: calc(185px + 309px);
 }
 
+.aboutBR {
+    position: relative;
+    z-index: 2;
+}
+
 .aboutBRT {
     font-size: 40px;
 }
 .aboutBRT span {
     font-weight: 600;
+}
+
+.aboutBRTS {
+    max-width: 550px;
+}
+
+@media (max-width: 1600px) {
+    .introTitle {
+        font-size: 75px;
+    }
+
+    .lb {
+        width: 250px;
+        height: 250px;
+        top: -90px;
+        left: -110px;
+    }
+
+    .rb {
+        width: 400px;
+        height: 400px;
+        top: 40px;
+        right: -160px;
+    }
+
+    .introCaption {
+        font-size: 30px;
+    }
+
+    .introText {
+        font-size: 30px;
+    }
+
+    .blocksWrapper {
+        max-width: 317px;
+        row-gap: 27px;
+    }
+
+    .b1h,
+    .b2h {
+        font-size: 55px;
+    }
+
+    .b1c,
+    .b2c {
+        font-size: 20px;
+    }
+
+    .introBlocks {
+        column-gap: 14px;
+    }
+
+    .aboutBtn {
+        font-size: 23px;
+        width: 274px;
+        height: 44px;
+    }
+
+    .aboutBL {
+        row-gap: 85px;
+    }
+
+    .aboutBtnS {
+        margin-left: 180px;
+    }
+
+    .aboutBtnT {
+        margin-left: 381px;
+    }
+
+    .aboutBRT {
+        font-size: 30px;
+    }
+
+    .aboutBRTS {
+        max-width: 500px;
+    }
 }

@@ -7,15 +7,21 @@ const Intro = () => {
 		<div className={styles.intro}>
 			<div>
 				<div className={styles.introTitle}>
-					<span>LOONA VENTURES</span>
-					<div className={`${styles.bubble} ${styles.lb}`}></div>
-					<div className={`${styles.bubble} ${styles.mb}`}></div>
-					<div className={`${styles.bubble} ${styles.rb}`}></div>
-
+					<div className={styles.titleText}>
+						<div className={styles.ttt}>LOONA VENTURES</div>
+						<div className={`${styles.bubble} ${styles.lb}`}></div>
+						<div className={`${styles.bubble} ${styles.rb}`}></div>
+					</div>
 				</div>
 				<div className={styles.introCaption}>
 					<div>Венчур с нами —</div>
-					<div> удобно, понятно, прибыльно</div>
+					<div className={styles.introCapBtm}>
+						<div className={styles.www}>
+							удобно, понятно, прибыльно
+							<div className={`${styles.bubble} ${styles.mb}`}></div>
+						</div>
+					</div>
+
 				</div>
 
 
@@ -52,7 +58,7 @@ const Intro = () => {
 			</div>
 			<div className={styles.aboutB}>
 				<div className={styles.aboutBL}>
-					<button className={`${styles.aboutBtn}`}>Как мы работаем?</button>
+					<button className={`${styles.aboutBtn} ${styles.invert}`}>Как мы работаем?</button>
 					<button className={`${styles.aboutBtn} ${styles.aboutBtnS}`}>О компании</button>
 					<button className={`${styles.aboutBtn} ${styles.aboutBtnT}`}>Портфолио</button>
 					<div className={styles.bloom3}>
@@ -61,7 +67,7 @@ const Intro = () => {
 				</div>
 				<div className={styles.aboutBR}>
 					<div className={styles.aboutBRT}><span>Развитие альтернативных инвестиций</span> – наша миссия</div>
-					<div className={styles.aboutBRT}><span>Индивидуальный подход</span> <br/>– наш принцип</div>
+					<div className={`${styles.aboutBRT} ${styles.aboutBRTS}`}><span>Индивидуальный подход</span> – наш принцип</div>
 				</div>
 			</div>
 			<div className={styles.bloom1}>

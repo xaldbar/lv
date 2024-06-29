@@ -94,10 +94,6 @@ const projects: TableRowProps[] = [
 ]
 
 const TableRow: FC<TableRowProps> = (props) => {
-	const onLinkClick = (href: string) => {
-		window.open(href, '_blank')
-	}
-
 	return (
 		<div className={`${styles.tableRow} ${styles.tableRowBody}`}>
 			<div className={styles.projectName}>

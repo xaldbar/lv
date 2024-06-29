@@ -3,7 +3,7 @@
     background-color: #2D2A2F;
     min-height: 100vh;
     color: white;
-    padding-bottom: 200px;
+    padding-bottom: 137px;
 }
 
 .intro {
@@ -65,6 +65,7 @@
     width: 389px;
     height: 389px;
     z-index: -1;
+    animation: lbAnimation 5s  infinite;
 }
 
 .mb {
@@ -72,6 +73,7 @@
     width: 187px;
     top: 100px;
     left: 0;
+    animation: mbAnimation 4s  infinite;
 }
 
 .www {
@@ -85,6 +87,7 @@
     width: 558px;
     z-index: 3;
     backdrop-filter: blur(2px);
+    animation: rbAnimation 3.5s  infinite;
 }
 
 .bloom1 {
@@ -300,6 +303,11 @@
 }
 
 @media (max-width: 1600px) {
+
+    .homePage {
+        padding-bottom: 115px;
+    }
+
     .introTitle {
         font-size: 75px;
     }
@@ -309,6 +317,11 @@
         height: 250px;
         top: -90px;
         left: -110px;
+    }
+
+    .mb {
+        height: 100px;
+        width: 100px;
     }
 
     .rb {
@@ -369,5 +382,51 @@
 
     .aboutBRTS {
         max-width: 500px;
+    }
+
+    .introInfo {
+        margin-top: 300px;
+    }
+}
+
+@keyframes mbAnimation {
+    0% {
+        top: 110px;
+    }
+
+    50% {
+        top: 100px;
+    }
+
+    100% {
+        top: 110px;
+    }
+}
+
+@keyframes lbAnimation {
+    0% {
+        top: -110px;
+    }
+
+    50% {
+        top: -120px;
+    }
+
+    100% {
+        top: -110px;
+    }
+}
+
+@keyframes rbAnimation {
+    0% {
+        top: 85px;
+    }
+
+    50% {
+        top: 75px;
+    }
+
+    100% {
+        top: 85px;
     }
 }

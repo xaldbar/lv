@@ -26,76 +26,76 @@ const projects: TableRowProps[] = [
 		name: 'Nayms',
 		sphere: 'DeFi',
 		round: 'Venture',
-		href: '',
+		href: 'https://www.nayms.com/',
 	},
 	{
 		logo: PortalLogo,
 		name: 'Portal',
 		sphere: 'GameFi',
 		round: 'Venture',
-		href: '',
+		href: 'https://www.portalgaming.com/',
 	},
 	{
 		logo: InspectLogo,
 		name: 'Inspect',
 		sphere: 'AI',
 		round: 'Venture',
-		href: '',
+		href: 'https://www.inspect.xyz/',
 	},
 	{
 		logo: OrangeLogo,
 		name: 'Orange',
 		sphere: 'DeFi',
 		round: 'KOL',
-		href: '',
+		href: 'https://www.orangecrypto.com/',
 	},
 	{
 		logo: ScrollLogo,
 		name: 'Scroll',
 		sphere: 'L2',
 		round: 'KOL',
-		href: '',
+		href: 'https://scroll.io/',
 	},
 	{
 		logo: MoemateLogo,
 		name: 'Moemate',
 		sphere: 'AI',
 		round: 'Venture',
-		href: '',
+		href: 'https://www.moemate.io/',
 	},
 	{
 		logo: SolidusLogo,
 		name: 'Solidus',
 		sphere: 'AI',
 		round: 'KOL',
-		href: '',
+		href: 'https://www.aitechpad.io/',
 	},
 	{
 		logo: OracleLogo,
 		name: 'Supra Oracle',
 		sphere: 'Oracle',
 		round: 'KOL',
-		href: '',
+		href: 'https://supra.com/',
 	},
 	{
 		logo: FuelLogo,
 		name: 'Fuel',
 		sphere: 'Blockchain',
 		round: 'Venture',
-		href: '',
+		href: 'https://fuel.network/',
 	},
 	{
 		logo: MonadLogo,
 		name: 'Monad',
 		sphere: 'Blockchain',
 		round: 'KOL',
-		href: '',
+		href: 'https://www.monad.xyz/',
 	},
 ]
 
 const TableRow: FC<TableRowProps> = (props) => {
 	const onLinkClick = (href: string) => {
-		return href
+		window.open(href, '_blank')
 	}
 
 	return (
@@ -106,9 +106,9 @@ const TableRow: FC<TableRowProps> = (props) => {
 			</div>
 			<div>{props.sphere}</div>
 			<div>{props.round}</div>
-			<div className={styles.rowLink} onClick={() => onLinkClick('')}>
+			<a href={props.href} className={styles.rowLink} target={'_blank'}>
 				<img src={ArrowIcon} alt=""/>
-			</div>
+			</a>
 		</div>
 	)
 }

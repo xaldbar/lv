@@ -28,7 +28,7 @@ const Intro = () => {
 			</div>
 			<div className={styles.introInfo}>
 				<div className={styles.introText}>
-					<div>
+					<div className={styles.itf}>
 						<span>Loona Ventures</span> - это <span>прибыль и индивидуальный подход</span> для каждого
 						клиента
 					</div>

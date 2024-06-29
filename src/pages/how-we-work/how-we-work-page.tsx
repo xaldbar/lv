@@ -1,6 +1,8 @@
+import styles from './how-we-work.module.css'
+
 const HowWeWorkPage = () => {
 	return (
-		<div>
+		<div className={styles.howWeWorkPage}>
 
 		</div>
 	);

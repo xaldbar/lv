@@ -337,6 +337,12 @@
 
     .introText {
         font-size: 30px;
+        row-gap: 28px;
+        line-height: 40px;
+    }
+
+    .itf {
+        padding-bottom: 21px;
     }
 
     .blocksWrapper {

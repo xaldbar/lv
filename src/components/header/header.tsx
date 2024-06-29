@@ -25,6 +25,10 @@ const MenuButton: React.FC = () => {
 		navigate('/portfolio')
 	}
 
+	const toFaq = () => {
+		navigate('/faq')
+	}
+
 	return (
 		<div className={styles.menuContainer}>
 			<button onClick={toggleMenu} className={styles.menuButton}>
@@ -35,6 +39,7 @@ const MenuButton: React.FC = () => {
 					<button onClick={toHowToWork} className={styles.menuOptionsButton}>Как мы работаем</button>
 					<button onClick={toAbout} className={styles.menuOptionsButton}>О компании</button>
 					<button onClick={toPortfolio} className={styles.menuOptionsButton}>Портфолио</button>
+					<button onClick={toFaq} className={styles.menuOptionsButton}>FAQ</button>
 				</div>
 			)}
 		</div>

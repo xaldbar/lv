@@ -50,14 +50,16 @@ const Header = () => {
 		navigate('/')
 	}
 	return (
-		<div className={styles.headerWrapper}>
-			<button  onClick={toInvest} className={styles.menuButton}>
-				Инвестировать
-			</button>
-			<button onClick={toHome} className={styles.logo}>
-				<img src={logo} className={styles.logo}/>
-			</button>
-			<MenuButton/>
+		<div className={styles.header}>
+			<div className={styles.headerWrapper}>
+				<button onClick={toInvest} className={styles.menuButton}>
+					Инвестировать
+				</button>
+				<button onClick={toHome} className={styles.logo}>
+					<img src={logo} className={styles.logo}/>
+				</button>
+				<MenuButton/>
+			</div>
 		</div>
 	);
 };

@@ -1,11 +1,42 @@
 .footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 66px;
+    margin: 0 45px;
+    margin-bottom: 133px;
+    color: #fff;
+
+}
+
+.foolterColTitle {
+    font-weight: 600;
+}
+
+.footerContact {
+    display: flex;
+    column-gap: 25px;
+}
+
+.footerBottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 40px;
+    column-gap: 50px;
+}
+
+.fbCol {
+    display: flex;
+    flex-direction: column;
+    row-gap: 53px;
+    max-width: 80%;
+}
+
+.footerTop {
     position: relative;
     background-color: #231F20;
     border-radius: 40px;
     padding: 126px 50px 80px;
     color: #fff;
-    margin: 0 45px;
-    margin-bottom: 132px;
     overflow: hidden;
 }
 
@@ -20,6 +51,14 @@
     width: 100%;
     height: 1px;
     background-color: #fff;
+}
+
+.separator.separatorF {
+    margin-bottom: -20px;
+}
+
+.separator.inv {
+    background-color: #212121;
 }
 
 .footerCaption {
@@ -69,6 +108,16 @@
 .logo {
     display: flex;
     align-items: end;
+}
+
+.footerLogo {
+    width: 355px;
+    height: 64px;
+}
+
+.footerLogo img {
+    width: 100%;
+    height: 100%
 }
 
 .bloom {

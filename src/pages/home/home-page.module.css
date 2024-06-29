@@ -172,6 +172,7 @@
     background-color: #FFF;
     color: #2D2A2F;
     max-width: 170px;
+    max-height: calc(178px + 178px + 50px);
     padding: 0 12px;
     position: relative;
     z-index: 2;

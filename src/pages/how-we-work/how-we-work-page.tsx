@@ -1,13 +1,13 @@
 import styles from './how-we-work.module.css'
 import graph from '../../assets/hww/graph.png'
-import {useEffect, useRef} from "react";
+import { useEffect, useRef} from "react";
 import step1 from '../../assets/hww/step1.svg'
 import step2 from '../../assets/hww/step2.svg'
 import step3 from '../../assets/hww/step3.svg'
 import step4 from '../../assets/hww/step4.svg'
 
 const HowWeWorkPage = () => {
-	const imageRef = useRef(null)
+	const imageRef = useRef<HTMLDivElement>(null)
 	useEffect(() => {
 		const animate = () => {
 			if (imageRef.current) {
@@ -43,7 +43,7 @@ const HowWeWorkPage = () => {
 					</div>
 				</div>
 				<div className={styles.imageWrapper}>
-					<img src={graph} alt="" ref={imageRef}/>
+					<img src={graph} alt=""/>
 					<div ref={imageRef} className={styles.animate}></div>
 				</div>
 			</div>

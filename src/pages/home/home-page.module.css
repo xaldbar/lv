@@ -120,10 +120,12 @@
 }
 
 .introInfo {
+    position: relative;
     padding: 0 21px;
     margin-top: 505px;
     display: flex;
     column-gap: 50px;
+    z-index: 3;
     justify-content: space-between;
 }
 

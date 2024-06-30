@@ -2,6 +2,9 @@ import styles from './home-page.module.css'
 import bloom3 from '../../assets/intro/intro_bloom3.svg'
 import bloom2 from '../../assets/intro/intro_bloom2.svg'
 import bloom1 from '../../assets/intro/intro_bloom1.svg'
+import {motion} from "framer-motion";
+
+
 const Intro = () => {
 	return (
 		<div className={styles.intro}>
@@ -26,7 +29,12 @@ const Intro = () => {
 
 
 			</div>
-			<div className={styles.introInfo}>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8 }}
+				className={styles.introInfo}
+			>
 				<div className={styles.introText}>
 					<div className={styles.itf}>
 						<span>Loona Ventures</span> - это <span>прибыль и индивидуальный подход</span> для каждого
@@ -55,7 +63,7 @@ const Intro = () => {
 						<div className={styles.b1c}>Проектов</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 			<div className={styles.aboutB}>
 				<div className={styles.aboutBL}>
 					<button className={`${styles.aboutBtn} ${styles.invert}`}>Как мы работаем?</button>

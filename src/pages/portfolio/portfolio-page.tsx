@@ -9,7 +9,7 @@ import OracleLogo from '../../assets/portfolio/oracle.svg'
 import FuelLogo from '../../assets/portfolio/fuel.svg'
 import MonadLogo from '../../assets/portfolio/monad.svg'
 import ArrowIcon from '../../assets/portfolio/arrow-icon.svg'
-import {FC} from "react";
+import {FC, useRef} from "react";
 import {motion} from "framer-motion";
 
 export interface TableRowProps {
@@ -18,6 +18,7 @@ export interface TableRowProps {
 	sphere: string
 	round: string
 	href: string
+	index?: number
 }
 
 const projects: TableRowProps[] = [
@@ -87,12 +88,14 @@ const projects: TableRowProps[] = [
 ]
 
 const TableRow: FC<TableRowProps> = (props) => {
+	const rowRef = useRef(null)
 	return (
 		<motion.div
+			ref={rowRef}
 			initial={{ opacity: 0, y: 100 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.8 }}
-			viewport={{ amount: 0.1, once: true }}
+			transition={{ duration: 1, delay: 0.1 + (((props.index ?? 0) + 1) * 0.05) }}
+			viewport={{ amount: 0.01, once: true }}
 			className={`${styles.tableRow} ${styles.tableRowBody}`}
 		>
 			<div className={styles.projectName}>
@@ -118,13 +121,14 @@ const PortfolioPage = () => {
 				<div>Сфера</div>
 				<div>Раунд</div>
 			</div>
-			{projects.map((item) => (
+			{projects.map((item, index) => (
 				<TableRow
 					logo={item.logo}
 					name={item.name}
 					sphere={item.sphere}
 					round={item.round}
 					href={item.href}
+					index={index}
 				/>
 			))}
 			<div className={styles.caption}>

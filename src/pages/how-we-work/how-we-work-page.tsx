@@ -43,7 +43,7 @@ const HowWeWorkPage = () => {
 				imageRef.current.style.left = Number(curPos.split('px')[0]) + 1 + 'px'
 			}
 		}
-		const int = setInterval(animate, 6)
+		const int = setInterval(animate, 10)
 		setTimeout(() => {
 			clearInterval(int)
 		}, 5000)

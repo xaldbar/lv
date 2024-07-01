@@ -4,6 +4,7 @@ import bloom2 from '../../assets/intro/intro_bloom2.svg'
 import bloom1 from '../../assets/intro/intro_bloom1.svg'
 import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 
 function useCounterAnimation(value: number, time: number, toFixed?: number) {
@@ -22,7 +23,19 @@ const Intro = () => {
 	const firstCounter = useCounterAnimation(65.3, 30)
 	const secondCounter = useCounterAnimation(153, 25, 0)
 	const thirdCounter = useCounterAnimation(80, 28, 0)
+	const navigate = useNavigate()
 
+	const toHww = () => {
+		navigate('/how-we-work')
+	}
+
+	const toAbout = () => {
+		navigate('/about')
+	}
+
+	const toPortfolio = () => {
+		navigate('/portfolio')
+	}
 
 	return (
 		<div className={styles.intro}>
@@ -96,9 +109,9 @@ const Intro = () => {
 				viewport={{ amount: 0.5, once: true }}
 				className={styles.aboutB}>
 				<div className={styles.aboutBL}>
-					<button className={`${styles.aboutBtn} ${styles.invert}`}>Как мы работаем?</button>
-					<button className={`${styles.aboutBtn} ${styles.aboutBtnS}`}>О компании</button>
-					<button className={`${styles.aboutBtn} ${styles.aboutBtnT}`}>Портфолио</button>
+					<button onClick={toHww} className={`${styles.aboutBtn} ${styles.invert}`}>Как мы работаем?</button>
+					<button onClick={toAbout} className={`${styles.aboutBtn} ${styles.aboutBtnS}`}>О компании</button>
+					<button onClick={toPortfolio} className={`${styles.aboutBtn} ${styles.aboutBtnT}`}>Портфолио</button>
 					<div className={styles.bloom3}>
 						<img src={bloom3} alt=""/>
 					</div>

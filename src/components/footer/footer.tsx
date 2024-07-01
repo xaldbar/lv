@@ -102,12 +102,12 @@ const Footer: FC<FooterProps> = (props) => {
 						<img src={logo} alt=""/>
 					</div>
 					<div className={`${styles.separator} ${styles.separatorF} ${styles.inv}`}></div>
-					<div>© 2024 OOO "Loona Ventures", все права защищены</div>
+					<div>© 2024 ООО «Луна Венчурс», все права защищены</div>
 				</div>
 				<div className={styles.fbCol}>
 					<div className={styles.foolterColTitle}>Компания:</div>
 					<div className={`${styles.separator} ${styles.separatorF}`}></div>
-					<div>Как мы работаем</div>
+					<div className={styles.ts}>Как мы работаем</div>
 					<div>О компании</div>
 					<div>Портфолио</div>
 				</div>

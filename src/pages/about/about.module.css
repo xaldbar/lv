@@ -116,7 +116,6 @@
 .timeline {
     width: 100%;
     margin-top: 448px;
-    padding-bottom: 200px;
 }
 
 .topLine {
@@ -281,15 +280,8 @@
     border-right: 5px solid #fff;
 }
 
-
-
-
-
-
-
-
 .persons {
-    margin-top: 350px;
+    margin-top: 250px;
     display: flex;
     flex-direction: column;
     row-gap: 170px;

@@ -1,5 +1,4 @@
 import styles from './how-we-work.module.css'
-import graph from '../../assets/hww/graph.png'
 import g2 from '../../assets/hww/g2.png'
 import { useEffect, useRef} from "react";
 import step1 from '../../assets/hww/step1.svg'

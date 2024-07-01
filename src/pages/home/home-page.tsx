@@ -3,27 +3,34 @@ import bloom3 from '../../assets/intro/intro_bloom3.svg'
 import bloom2 from '../../assets/intro/intro_bloom2.svg'
 import bloom1 from '../../assets/intro/intro_bloom1.svg'
 import {motion} from "framer-motion";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {useInView} from "framer-motion";
 
 
-function useCounterAnimation(value: number, time: number, toFixed?: number) {
+function useCounterAnimation(value: number, time: number, start: boolean, toFixed?: number) {
 	const [number, setNumber] = useState(10)
 
 	const delta = (value - 10) / time
 
 	useEffect(() => {
+		if (!start) {
+			return
+		}
 		Number(number.toFixed(2)) !== value && setTimeout(setNumber, time, number + delta)
-	}, [number])
+	}, [number, start])
 
 	return number.toFixed(toFixed ?? 1)
 }
 
 const Intro = () => {
-	const firstCounter = useCounterAnimation(65.3, 30)
-	const secondCounter = useCounterAnimation(153, 25, 0)
-	const thirdCounter = useCounterAnimation(80, 28, 0)
+	const bwRef = useRef(null)
+	const bwInView = useInView(bwRef)
+	const firstCounter = useCounterAnimation(65.3, 30, bwInView)
+	const secondCounter = useCounterAnimation(153, 25, bwInView, 0)
+	const thirdCounter = useCounterAnimation(80, 28, bwInView, 0)
 	const navigate = useNavigate()
+
 
 	const toHww = () => {
 		navigate('/how-we-work')
@@ -85,7 +92,7 @@ const Intro = () => {
 						Нас выбирают за <span>качественную работу и свежий взгляд</span> на рынок
 					</div>
 				</div>
-				<div className={styles.introBlocks}>
+				<motion.div ref={bwRef} className={styles.introBlocks}>
 					<div className={styles.blocksWrapper}>
 						<div className={styles.block1}>
 							<div className={styles.b1h}>{firstCounter}%</div>
@@ -100,7 +107,7 @@ const Intro = () => {
 						<div className={styles.b1h}>{thirdCounter}+</div>
 						<div className={styles.b1c}>Проектов</div>
 					</div>
-				</div>
+				</motion.div>
 			</motion.div>
 			<motion.div
 				initial={{ opacity: 0, y: 100 }}

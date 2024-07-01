@@ -1,13 +1,44 @@
 import styles from './how-we-work.module.css'
 import g2 from '../../assets/hww/g2.png'
-import { useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import step1 from '../../assets/hww/step1.svg'
 import step2 from '../../assets/hww/step2.svg'
 import step3 from '../../assets/hww/step3.svg'
 import step4 from '../../assets/hww/step4.svg'
+import {useInView} from "framer-motion";
 
 const HowWeWorkPage = () => {
 	const imageRef = useRef<HTMLDivElement>(null)
+	const step1Ref = useRef(null)
+	const step2Ref = useRef(null)
+	const step3Ref = useRef(null)
+	const step4Ref = useRef(null)
+	const is1InView = useInView(step1Ref, {amount: 0.8})
+	const is2InView = useInView(step2Ref, {amount: 0.8})
+	const is3InView = useInView(step3Ref, {amount: 0.8})
+	const is4InView = useInView(step4Ref, {amount: 0.8})
+
+	const [anim, setAnim] = useState(false)
+	const [step, setStep] = useState(1)
+
+	useEffect(() => {
+		if (is1InView) {
+			setStep(1)
+		}
+		if (is2InView) {
+			setStep(2)
+		}
+		if (is3InView) {
+			setStep(3)
+		}
+		if (is4InView) {
+			setStep(4)
+		}
+		setAnim(true)
+		setTimeout(setAnim, 500, false)
+	}, [is1InView, is2InView, is3InView, is4InView])
+
+
 	useEffect(() => {
 		const animate = () => {
 			if (imageRef.current) {
@@ -48,8 +79,8 @@ const HowWeWorkPage = () => {
 				</div>
 			</div>
 			<div className={styles.content}>
-				<div className={styles.row}>
-					<div className={styles.textBlock}>
+				<div className={styles.textContent}>
+					<div ref={step1Ref} className={styles.textBlock}>
 						<div className={styles.textBlockTitle}>
 							1. Мы ищем проект
 						</div>
@@ -75,13 +106,8 @@ const HowWeWorkPage = () => {
 						</div>
 					</div>
 
-					<div className={styles.rowImage}>
-						<img src={step1} alt=""/>
-					</div>
-				</div>
 
-				<div className={styles.row}>
-					<div className={styles.textBlock}>
+					<div ref={step2Ref} className={styles.textBlock}>
 						<div className={styles.textBlockTitle}>
 							2. Инициируем сделку на Private раунде
 						</div>
@@ -108,13 +134,7 @@ const HowWeWorkPage = () => {
 						</div>
 					</div>
 
-					<div className={styles.rowImage}>
-						<img src={step2} alt=""/>
-					</div>
-				</div>
-
-				<div className={styles.row}>
-					<div className={styles.textBlock}>
+					<div ref={step3Ref} className={styles.textBlock}>
 						<div className={styles.textBlockTitle}>
 							3. Инициируем сделку на KOL раунде
 						</div>
@@ -144,14 +164,7 @@ const HowWeWorkPage = () => {
 							</div>
 						</div>
 					</div>
-
-					<div className={styles.rowImage}>
-						<img src={step3} alt=""/>
-					</div>
-				</div>
-
-				<div className={styles.row}>
-					<div className={styles.textBlock}>
+					<div ref={step4Ref} className={styles.textBlock}>
 						<div className={styles.textBlockTitle}>
 							4. Подписываем SAFT контракт с проектом и продаём токены
 						</div>
@@ -176,10 +189,12 @@ const HowWeWorkPage = () => {
 							</div>
 						</div>
 					</div>
-
-					<div className={styles.rowImage}>
-						<img src={step4} alt=""/>
-					</div>
+				</div>
+				<div className={styles.slider}>
+					{step === 1  ? <img className={styles.sliderImage} src={step1} alt=""/> : null}
+					{step === 2  ? <img className={styles.sliderImage} src={step2} alt=""/> : null}
+					{step === 3  ? <img className={styles.sliderImage} src={step3} alt=""/> : null}
+					{step === 4  ? <img className={styles.sliderImage} src={step4} alt=""/> : null}
 				</div>
 			</div>
 		</div>

@@ -65,14 +65,9 @@
 
 .content {
     display: flex;
-    flex-direction: column;
-    row-gap: 77px;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    row-gap: 50px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .textBlock {
@@ -80,6 +75,7 @@
     background-color: #38343A;
     box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 25%), 10px 10px 10px 5px rgba(0, 0, 0, 25%);
     padding: 23px 40px 76px 25px;
+    margin-bottom: 77px;
     width: 915px;
 }
 
@@ -101,11 +97,42 @@
 }
 
 .rowImage {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .rowImage img {
+    top: 50px;
+    position: sticky;
+}
 
+
+.textContent {
+}
+
+
+.slider {
+    padding-left: 130px;
+    padding-top: 50px;
+    position: sticky;
+    top: 300px
+}
+
+
+
+
+.slider img {
+
+}
+
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.sliderImage {
+    animation: fadeInOut 0.5s ease-in-out;
 }

@@ -26,9 +26,9 @@ function useCounterAnimation(value: number, time: number, start: boolean, toFixe
 const Intro = () => {
 	const bwRef = useRef(null)
 	const bwInView = useInView(bwRef)
-	const firstCounter = useCounterAnimation(65.3, 30, bwInView)
-	const secondCounter = useCounterAnimation(153, 25, bwInView, 0)
-	const thirdCounter = useCounterAnimation(80, 28, bwInView, 0)
+	const firstCounter = useCounterAnimation(65.3, 60, bwInView)
+	const secondCounter = useCounterAnimation(153, 50, bwInView, 0)
+	const thirdCounter = useCounterAnimation(80, 58, bwInView, 0)
 	const navigate = useNavigate()
 
 

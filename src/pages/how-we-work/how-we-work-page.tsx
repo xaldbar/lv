@@ -13,10 +13,10 @@ const HowWeWorkPage = () => {
 	const step2Ref = useRef(null)
 	const step3Ref = useRef(null)
 	const step4Ref = useRef(null)
-	const is1InView = useInView(step1Ref, {amount: 0.8})
-	const is2InView = useInView(step2Ref, {amount: 0.8})
-	const is3InView = useInView(step3Ref, {amount: 0.8})
-	const is4InView = useInView(step4Ref, {amount: 0.8})
+	const is1InView = useInView(step1Ref, {amount: 0.5})
+	const is2InView = useInView(step2Ref, {amount: 0.5})
+	const is3InView = useInView(step3Ref, {amount: 0.5})
+	const is4InView = useInView(step4Ref, {amount: 0.5})
 
 	const [step, setStep] = useState(1)
 

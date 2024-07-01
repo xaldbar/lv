@@ -136,3 +136,14 @@
 .sliderImage {
     animation: fadeInOut 0.5s ease-in-out;
 }
+
+@media (max-width: 1600px) {
+    .textBlock {
+        width: 643px;
+    }
+
+    .sliderImage {
+        width: 550px;
+    }
+
+}

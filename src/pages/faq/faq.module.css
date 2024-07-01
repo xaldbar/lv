@@ -44,6 +44,10 @@
     align-items: center;
     border-radius: 100%;
     border: 1px solid #fff;
+    user-select: none;
+    -webkit-user-select: none;  /* Для поддержки веб-кит браузеров */
+    -moz-user-select: none;     /* Для поддержки Firefox */
+    -ms-user-select: none;
 }
 
 .www {

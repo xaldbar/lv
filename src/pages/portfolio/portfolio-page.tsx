@@ -5,12 +5,12 @@ import InspectLogo from '../../assets/portfolio/Inspect.svg'
 import OrangeLogo from '../../assets/portfolio/orange.svg'
 import ScrollLogo from '../../assets/portfolio/scroll.svg'
 import MoemateLogo from '../../assets/portfolio/moemate.svg'
-import SolidusLogo from '../../assets/portfolio/solidus.svg'
 import OracleLogo from '../../assets/portfolio/oracle.svg'
 import FuelLogo from '../../assets/portfolio/fuel.svg'
 import MonadLogo from '../../assets/portfolio/monad.svg'
 import ArrowIcon from '../../assets/portfolio/arrow-icon.svg'
 import {FC} from "react";
+import {motion} from "framer-motion";
 
 export interface TableRowProps {
 	logo: any
@@ -64,13 +64,6 @@ const projects: TableRowProps[] = [
 		href: 'https://www.moemate.io/',
 	},
 	{
-		logo: SolidusLogo,
-		name: 'Solidus',
-		sphere: 'AI',
-		round: 'KOL',
-		href: 'https://www.aitechpad.io/',
-	},
-	{
 		logo: OracleLogo,
 		name: 'Supra Oracle',
 		sphere: 'Oracle',
@@ -95,7 +88,13 @@ const projects: TableRowProps[] = [
 
 const TableRow: FC<TableRowProps> = (props) => {
 	return (
-		<div className={`${styles.tableRow} ${styles.tableRowBody}`}>
+		<motion.div
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.8 }}
+			viewport={{ amount: 0.1, once: true }}
+			className={`${styles.tableRow} ${styles.tableRowBody}`}
+		>
 			<div className={styles.projectName}>
 				<img src={props.logo} alt=""/>
 				{props.name}
@@ -105,7 +104,7 @@ const TableRow: FC<TableRowProps> = (props) => {
 			<a href={props.href} className={styles.rowLink} target={'_blank'}>
 				<img src={ArrowIcon} alt=""/>
 			</a>
-		</div>
+		</motion.div>
 	)
 }
 const PortfolioPage = () => {

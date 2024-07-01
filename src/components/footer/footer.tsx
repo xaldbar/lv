@@ -1,5 +1,11 @@
 import {FC} from "react";
 import styles from './footer.module.css'
+import logo from '../../assets/logo/logosvg.svg'
+import bloom from '../../assets/footer/bloom.svg'
+import PhoneIcon from '../../assets/footer/icons/Phone.svg'
+import EmailIcon from '../../assets/footer/icons/Email.svg'
+import {motion} from "framer-motion";
+
 export interface InputProps {
 	type: 'text' | 'tel'
 	placeholder: string
@@ -8,10 +14,10 @@ export interface InputProps {
 	label: string
 	pattern?: string
 }
-import logo from '../../assets/logo/logosvg.svg'
-import bloom from '../../assets/footer/bloom.svg'
-import PhoneIcon from '../../assets/footer/icons/Phone.svg'
-import EmailIcon from '../../assets/footer/icons/Email.svg'
+
+export interface FooterProps {
+	title: string
+}
 
 const FooterInput: FC<InputProps> = (props: InputProps) => {
 	return (
@@ -22,11 +28,11 @@ const FooterInput: FC<InputProps> = (props: InputProps) => {
 	)
 }
 
-const Footer = () => {
+const Footer: FC<FooterProps> = (props) => {
 	return (
 		<div className={styles.footer}>
 			<div className={styles.footerTop}>
-				<div className={styles.footerTitle}>Зарабатывайте вместе с нами</div>
+				<div className={styles.footerTitle}>{props.title}</div>
 				<div className={styles.separator}></div>
 				<div className={styles.footerCaption}>
 					Оставьте заявку и менеджер свяжется с вами в ближайшее время
@@ -60,10 +66,35 @@ const Footer = () => {
 				<div className={styles.bloom}>
 					<img src={bloom}/>
 				</div>
-				<div className={`${styles.bubble} ${styles.lb}`}></div>
-				<div className={`${styles.bubble} ${styles.mb}`}></div>
-				<div className={`${styles.bubble} ${styles.rb}`}></div>
-				<div className={`${styles.bubble} ${styles.bb}`}></div>
+				<motion.div
+					animate={{
+						top: ['195px', '205px', '195px'],
+					}}
+					transition={{ repeat: Infinity, duration: 4 }}
+					className={`${styles.bubble} ${styles.lb}`}
+				></motion.div>
+				<motion.div
+					animate={{
+						top: ['200px', '215px', '200px'],
+					}}
+					transition={{ repeat: Infinity, duration: 4 }}
+					className={`${styles.bubble} ${styles.mb}`}
+				></motion.div>
+				<motion.div
+					animate={{
+						top: ['195px', '205px', '195px'],
+					}}
+					transition={{ repeat: Infinity, duration: 4 }}
+					className={`${styles.bubble} ${styles.rb}`}
+				></motion.div>
+				<motion.div
+					animate={{
+						bottom: ['-55px', '-66px', '-55px'],
+						left: ['-171px', '-171px', '-171px']
+					}}
+					transition={{ repeat: Infinity, duration: 4 }}
+					className={`${styles.bubble} ${styles.bb}`}
+				></motion.div>
 			</div>
 			<div className={styles.footerBottom}>
 				<div className={styles.fbCol}>

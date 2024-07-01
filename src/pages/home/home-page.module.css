@@ -65,7 +65,7 @@
     width: 389px;
     height: 389px;
     z-index: -1;
-    animation: lbAnimation 5s  infinite;
+    /*animation: lbAnimation 6s  infinite;*/
 }
 
 .mb {
@@ -73,7 +73,7 @@
     width: 187px;
     top: 100px;
     left: 0;
-    animation: mbAnimation 4s  infinite;
+    animation: mbAnimation 5s  infinite;
 }
 
 .www {
@@ -87,7 +87,7 @@
     width: 558px;
     z-index: 3;
     backdrop-filter: blur(2px);
-    animation: rbAnimation 3.5s  infinite;
+    animation: rbAnimation 4s  infinite;
 }
 
 .bloom1 {
@@ -152,7 +152,8 @@
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
-    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 25%);
+    text-align: center;
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 25%);
 }
 
 .introBlocks {
@@ -173,6 +174,7 @@
     background-color: #FFF;
     padding: 34px 0;
     color: #2D2A2F;
+    width: 100%;
     transition: all .3s ease-in-out;
 }
 
@@ -184,6 +186,7 @@
 
 .block2 {
     background-color: #2D2A2F;
+    width: 100%;
     padding: 34px 0;
     transition: all .3s ease-in-out;
 }
@@ -194,11 +197,11 @@
 }
 
 .block3 {
+    display: flex;
     background-color: #FFF;
     color: #2D2A2F;
-    max-width: 170px;
+    width: 170px;
     max-height: calc(178px + 178px + 50px);
-    padding: 0 12px;
     position: relative;
     z-index: 2;
     transition: all .3s ease-in-out;

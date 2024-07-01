@@ -1,7 +1,7 @@
 import styles from './faq.module.css'
 import arrowIcon from '../../assets/faq/arrowIcon.svg'
 import {FC, useState} from "react";
-
+import {motion} from "framer-motion";
 
 export interface QuestionProps {
 	content: any
@@ -78,7 +78,13 @@ const Question: FC<QuestionProps> = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className={styles.q}>
+		<motion.div
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.8 }}
+			viewport={{ amount: 0.1, once: true }}
+			className={styles.q}
+		>
 			<div className={styles.qHeader}>
 				<div className={styles.qTitle}>{props.title}</div>
 				<div
@@ -94,7 +100,7 @@ const Question: FC<QuestionProps> = (props) => {
 					{props.content}
 				</div>
 			) : null}
-		</div>
+		</motion.div>
 	)
 }
 

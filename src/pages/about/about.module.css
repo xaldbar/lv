@@ -1,0 +1,358 @@
+.aboutPage {
+    padding: 0 45px;
+    margin-top: 250px;
+    color: #fff;
+    margin-bottom: 137px;
+}
+
+.pageTitle {
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.quotes {
+    margin-top: 120px;
+    font-size: 40px;
+}
+
+.qH {
+    font-weight: 600;
+}
+
+.sq {
+    margin-left: 165px;
+    margin-top: 43px;
+}
+
+.tq {
+    margin-left: 285px;
+    margin-top: 80px;
+}
+
+.fq {
+    margin-left: 544px;
+    margin-top: 50px;
+}
+
+.values {
+    margin-top: 300px;
+}
+
+.valuesTitle {
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.valuesContent {
+    padding-top: 75px;
+    position: relative;
+
+}
+
+.circle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 630px;
+    height: 630px;
+    border: 1px solid #fff;
+    border-radius: 100%;
+}
+
+.valueItem {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    font-size: 26px;
+    border-radius: 20px;
+    padding: 8px 12px;
+    width: fit-content;
+    box-shadow: rgba(255, 255, 255, 0.25) 0 0 0, rgba(255, 255, 255, 0.12) 0px 0px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0 0 0, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+
+}
+
+.vcWrapper {
+    width: 630px;
+    height: 630px;
+}
+
+.fi {
+    margin-top: 117px;
+    margin-left: calc(50% - 315px + 466px);
+}
+
+.si {
+    margin-top: 28px;
+    margin-left: calc(50% - 315px - 215px);
+}
+
+.ti {
+    margin-top: 112px;
+    margin-left: calc(50% - 315px + 338px);
+    padding: 8px 80px;
+}
+
+.foi {
+    margin-top: 117px;
+    margin-left: calc(50% - 315px - 116px);
+    padding: 8px 30px;
+}
+
+.fai {
+    margin-top: 7px;
+    margin-left: calc(50% - 315px + 384px);
+}
+
+.timeline {
+    width: 100%;
+    margin-top: 448px;
+    padding-bottom: 200px;
+}
+
+.topLine {
+    height: 5px;
+    width: 60px;
+    background-color: white;
+    margin-left: calc(50% - 27px);
+}
+
+.date {
+    width: fit-content;
+    border-radius: 20px;
+    padding: 20px 40px;
+    font-size: 40px;
+    font-weight: 600;
+    background-color: #6D57B1;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+.tblock {
+    width: calc(50%);
+}
+
+.fbdate,
+.fbText {
+    margin-left: 40px;
+}
+
+.fbl {
+    position: relative;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    display: flex;
+    flex-direction: column;
+    row-gap: 124px;
+    padding-bottom: 89px;
+}
+
+.tblockText {
+    font-size: 40px;
+}
+
+.fblB {
+    border-left: 5px solid #ffff;
+    position: absolute;
+    top: calc(100% - 60px);
+    bottom: 0;
+}
+
+.sbl {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 112px;
+    margin-top: -10px;
+    margin-right: -4.8px;
+    float: right;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+}
+
+.sbdate,
+.sbtext {
+    margin-left: 50px;
+}
+
+.sbtext {
+    margin-bottom: 80px;
+}
+
+.sblB {
+    border-left: 5px solid #ffff;
+    position: absolute;
+    top: calc(100% - 60px);
+    bottom: 0;
+    right: 0;
+}
+
+.tbl {
+    position: relative;
+    margin-top: -30px;
+    display: flex;
+    row-gap: 167px;
+    flex-direction: column;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    padding-bottom: 100px;
+}
+
+.tbdate {
+}
+
+.tbdate,
+.tbtext {
+    margin-left: 40px;
+}
+
+.tblB {
+    border-left: 5px solid #ffff;
+    position: absolute;
+    left: 0;
+    top: calc(100% - 60px);
+    bottom: 0;
+}
+
+.fobl {
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+    position: relative;
+    margin-right: -4.8px;
+    float: right;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    padding-bottom: 40px;
+}
+
+.fobdate,
+.fobtext {
+    margin-left: 50px;
+}
+
+.fibl {
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 140px;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.fibdate,
+.fibText {
+    margin-left: 40px;
+}
+
+.sibl {
+    float: right;
+    margin-right: -4.8px;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    position: relative;
+    row-gap: 116px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+
+.sibdate,
+.sibtext {
+    margin-left: 40px;
+}
+
+.sevbl {
+    border-left: 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 400px;
+    border-right: 5px solid #fff;
+}
+
+
+
+
+
+
+
+
+.persons {
+    margin-top: 350px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 170px;
+}
+
+.person {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 120px;
+}
+
+.personText::before,
+.personText::after {
+    content: "";
+    position: absolute;
+    background-image: url('/src/assets/about/quote.svg');
+    background-size: cover;
+}
+
+.personText::before {
+    top: -50px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.personText::after {
+    bottom: -30px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+}
+
+.pName {
+    margin-top: 16px;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.pRole {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.personText {
+    padding: 20px;
+    position: relative;
+    font-size: 30px;
+    line-height: 42px;
+}
+
+.piT {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 16px;
+}
+
+.siT {
+    margin-top: 12px;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 16px;
+}
+
+.personTextSecond {
+    margin-left: 50px;
+}

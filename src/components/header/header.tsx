@@ -64,7 +64,11 @@ const MenuButton: React.FC = () => {
 const Header = () => {
 	const navigate = useNavigate()
 	const toInvest = () => {
-		navigate('/invest')
+
+		const element = document.getElementById('footer_invoice');
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
 	}
 	const toHome = () => {
 		navigate('/')

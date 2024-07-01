@@ -19,7 +19,7 @@
 .footerBottom {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    font-size: 40px;
+    font-size: 20px;
     column-gap: 50px;
 }
 
@@ -41,7 +41,7 @@
 
 .footerTitle {
     margin-left: 25px;
-    font-size: 70px;
+    font-size: 30px;
     font-weight: 600;
     padding-bottom: 56px;
 }
@@ -63,7 +63,7 @@
 .footerCaption {
     margin-top: 50px;
     margin-left: 25px;
-    font-size: 40px;
+    font-size: 20px;
     max-width: 830px;
 }
 

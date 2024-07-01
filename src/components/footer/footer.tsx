@@ -30,7 +30,7 @@ const FooterInput: FC<InputProps> = (props: InputProps) => {
 
 const Footer: FC<FooterProps> = (props) => {
 	return (
-		<div className={styles.footer}>
+		<div id={'footer_invoice'} className={styles.footer}>
 			<div className={styles.footerTop}>
 				<div className={styles.footerTitle}>{props.title}</div>
 				<div className={styles.separator}></div>

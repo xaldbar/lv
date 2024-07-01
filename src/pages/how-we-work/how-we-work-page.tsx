@@ -1,5 +1,6 @@
 import styles from './how-we-work.module.css'
 import graph from '../../assets/hww/graph.png'
+import g2 from '../../assets/hww/g2.png'
 import { useEffect, useRef} from "react";
 import step1 from '../../assets/hww/step1.svg'
 import step2 from '../../assets/hww/step2.svg'
@@ -15,7 +16,7 @@ const HowWeWorkPage = () => {
 				imageRef.current.style.left = Number(curPos.split('px')[0]) + 1 + 'px'
 			}
 		}
-		const int = setInterval(animate, )
+		const int = setInterval(animate, 6)
 		setTimeout(() => {
 			clearInterval(int)
 		}, 5000)
@@ -43,7 +44,7 @@ const HowWeWorkPage = () => {
 					</div>
 				</div>
 				<div className={styles.imageWrapper}>
-					<img src={graph} alt=""/>
+					<img src={g2} alt=""/>
 					<div ref={imageRef} className={styles.animate}></div>
 				</div>
 			</div>

@@ -2,24 +2,29 @@ import styles from './about.module.css'
 import alex from '../../assets/about/alex.svg'
 import vas from '../../assets/about/vas.svg'
 import {motion} from "framer-motion";
+import bloom1 from '../../assets/about/bloom1.svg'
+import bloom2 from '../../assets/about/bloom2.svg'
+import bloom3 from '../../assets/about/bloom3.svg'
+import bloom4 from '../../assets/about/bloom4.svg'
+import bloom5 from '../../assets/about/bloom5.svg'
 
 const Quotes = () => {
 	return (
 		<div className={styles.quotes}>
 			<motion.div
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8 }}
-				viewport={{ amount: 0.5, once: true }}
+				initial={{opacity: 0, y: 100}}
+				whileInView={{opacity: 1, y: 0}}
+				transition={{duration: 0.8}}
+				viewport={{amount: 0.5, once: true}}
 			>
 				— <span className={styles.qH}>первый легальный Web3 фонд в России</span> <br/> Мы предлагаем нашим
 				клиентам заработать, вкладываясь в международные <br/>крипто-стартапы
 			</motion.div>
 			<motion.div
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8, delay: 0.2 }}
-				viewport={{ amount: 0.5, once: true }}
+				initial={{opacity: 0, y: 100}}
+				whileInView={{opacity: 1, y: 0}}
+				transition={{duration: 0.8, delay: 0.2}}
+				viewport={{amount: 0.5, once: true}}
 				className={styles.sq}
 			>
 				— глубокое понимание рынка и хорошая репутация – залог лучших предложений на рынке <br/>
@@ -27,24 +32,35 @@ const Quotes = () => {
 			</motion.div>
 
 			<motion.div
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8, delay: 0.4 }}
-				viewport={{ amount: 0.5, once: true }}
+				initial={{opacity: 0, y: 100}}
+				whileInView={{opacity: 1, y: 0}}
+				transition={{duration: 0.8, delay: 0.4}}
+				viewport={{amount: 0.5, once: true}}
 				className={styles.tq}
 			>
 				— <span className={styles.qH}>наша миссия</span> – развивать альтернативные инвестиции в России
 			</motion.div>
 			<motion.div
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8, delay: 0.6 }}
-				viewport={{ amount: 0.5, once: true }}
+				initial={{opacity: 0, y: 100}}
+				whileInView={{opacity: 1, y: 0}}
+				transition={{duration: 0.8, delay: 0.6}}
+				viewport={{amount: 0.9, once: true}}
 				className={styles.fq}
 			>
 				— это неразрывно связано с <span className={styles.qH}>успешными инвестициями наших клиентов, ведь репутация – главное,</span> что
 				у нас есть
+				<motion.div
+					transition={{ repeat: Infinity, duration: 7, delay: 0}}
+					animate={{
+						top: [30, 70, 30],
+					}}
+					className={`${styles.bubble} ${styles.fbbl}`}
+				></motion.div>
+
 			</motion.div>
+			<div className={styles.bloom2}>
+				<img src={bloom2} alt=""/>
+			</div>
 		</div>
 	)
 }
@@ -53,19 +69,19 @@ const Values = () => {
 		<div className={styles.values}>
 			<motion.div
 				className={styles.valuesTitle}
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8 }}
-				viewport={{ amount: 0.8, once: true }}
+				initial={{opacity: 0, y: 100}}
+				whileInView={{opacity: 1, y: 0}}
+				transition={{duration: 0.8}}
+				viewport={{amount: 0.8, once: true}}
 			>
 				Наши ценности
 			</motion.div>
 			<motion.div
 				className={styles.valuesContent}
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8 }}
-				viewport={{ amount: 0.5, once: true }}
+				initial={{opacity: 0, y: 100}}
+				whileInView={{opacity: 1, y: 0}}
+				transition={{duration: 0.8}}
+				viewport={{amount: 0.5, once: true}}
 			>
 				<div className={styles.circle}></div>
 				<div className={`${styles.valueItem} ${styles.fi}`}>
@@ -84,6 +100,16 @@ const Values = () => {
 					Профессионализм и пунктуальность
 				</div>
 			</motion.div>
+			<div className={styles.bloom3}>
+				<img src={bloom3} alt=""/>
+			</div>
+			<motion.div
+				transition={{repeat: Infinity, duration: 7, delay: 0}}
+				animate={{
+					top: [-40, -70, -40],
+				}}
+				className={`${styles.bubble} ${styles.sbbl}`}
+			></motion.div>
 		</div>
 	)
 }
@@ -93,8 +119,8 @@ const Timeline = () => {
 		<div className={styles.timeline}>
 			<div className={styles.topLine}></div>
 			<motion.div
-				initial={{ opacity: 0,}}
-				whileInView={{ opacity: 1,}}
+				initial={{opacity: 0,}}
+				whileInView={{opacity: 1,}}
 				transition={{ duration: 0.8 }}
 				viewport={{ amount: 0.5, once: true }}
 				className={`${styles.tblock} ${styles.fbl}`}
@@ -223,7 +249,16 @@ const Persons = () => {
 		<div className={styles.persons}>
 			<div className={styles.person}>
 					<div className={styles.personImage}>
-						<img src={alex} alt=""/>
+						<img src={alex} alt="" className={styles.pimg}/>
+						<div className={styles.bloom4}>
+							<img src={bloom4} alt=""/>
+						</div>
+						<motion.div
+							transition={{repeat: Infinity, duration: 7, delay: 0}}
+							animate={{
+								top: [-80, -110, -80],
+							}}
+							className={`${styles.bubble} ${styles.tbbl}`}></motion.div>
 					</div>
 					<div className={styles.personText}>
 						За время нашей работы мы неоднократно сталкивались с тем, что
@@ -250,7 +285,16 @@ const Persons = () => {
 					Вам кажется, что этот борщ — самый вкусный в вашей жизни. Но если бы вам подали это же блюдо в ресторане, оно показалось бы обычным. Наша команда придерживается того же принципа: мы — ателье для премиальных клиентов, предлагающее обслуживание, которое всегда действует в интересах инвестора
 				</div>
 				<div className={styles.personImage}>
-					<img src={vas} alt=""/>
+					<img src={vas} alt="" className={styles.pimg}/>
+					<div className={styles.bloom5}>
+						<img src={bloom5} alt=""/>
+					</div>
+					<motion.div
+						transition={{repeat: Infinity, duration: 7, delay: 0}}
+						animate={{
+							top: [-80, -110, -80],
+						}}
+						className={`${styles.bubble} ${styles.fobbl}`}></motion.div>
 				</div>
 				<div className={styles.siT}>
 					<span className={styles.pName}>Алексей Скобелев</span>
@@ -269,6 +313,9 @@ const AboutPage = () => {
 			<Values/>
 			<Timeline/>
 			<Persons/>
+			<div className={styles.bloom1}>
+				<img src={bloom1} alt=""/>
+			</div>
 		</div>
 	);
 };

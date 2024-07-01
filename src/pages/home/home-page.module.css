@@ -113,10 +113,10 @@
 .bloom1,
 .bloom2,
 .bloom3 {
-    /*user-select: none;*/
-    /*-webkit-user-select: none;  !* Для поддержки веб-кит браузеров *!*/
-    /*-moz-user-select: none;     !* Для поддержки Firefox *!*/
-    /*-ms-user-select: none;*/
+    user-select: none;
+    -webkit-user-select: none;  /* Для поддержки веб-кит браузеров */
+    -moz-user-select: none;     /* Для поддержки Firefox */
+    -ms-user-select: none;
 }
 
 .introInfo {
@@ -227,6 +227,8 @@
 }
 
 .aboutB {
+    position: relative;
+    z-index: 2;
     padding-top: 152px;
     display: flex;
     justify-content: space-between;
@@ -371,7 +373,7 @@
 
     .aboutBtn {
         font-size: 23px;
-        width: 274px;
+        width: 350px;
         height: 44px;
     }
 

@@ -1,6 +1,7 @@
 .aboutPage {
+    position: relative;
     padding: 0 45px;
-    margin-top: 250px;
+    padding-top: 250px;
     color: #fff;
     margin-bottom: 137px;
 }
@@ -11,8 +12,10 @@
 }
 
 .quotes {
+    position: relative;
     margin-top: 120px;
     font-size: 40px;
+    z-index: 3;
 }
 
 .qH {
@@ -30,17 +33,22 @@
 }
 
 .fq {
+    position: relative;
     margin-left: 544px;
     margin-top: 50px;
+    max-width: 1100px;
 }
 
 .values {
     margin-top: 300px;
+    position: relative;
+    z-index: 3;
 }
 
 .valuesTitle {
     font-size: 70px;
     font-weight: 600;
+    text-align: center;
 }
 
 .valuesContent {
@@ -233,7 +241,7 @@
 }
 
 .fibl {
-    margin-top: 300px;
+    margin-top: 260px;
     display: flex;
     flex-direction: column;
     row-gap: 140px;
@@ -294,6 +302,15 @@
     column-gap: 120px;
 }
 
+.personImage {
+    position: relative;
+}
+
+.pimg {
+    position: relative;
+    z-index: 3;
+}
+
 .personText::before,
 .personText::after {
     content: "";
@@ -335,6 +352,8 @@
 }
 
 .piT {
+    position: relative;
+    z-index: 3;
     margin-top: 12px;
     display: flex;
     flex-direction: column;
@@ -344,6 +363,8 @@
 }
 
 .siT {
+    position: relative;
+    z-index: 3;
     margin-top: 12px;
     grid-column: 2;
     display: flex;
@@ -355,4 +376,88 @@
 
 .personTextSecond {
     margin-left: 50px;
+}
+
+.bloom1 {
+    top: -50px;
+    position: absolute;
+    left: 300px;
+}
+
+.bloom2 {
+    position: absolute;
+    top: 50px;
+    z-index: 1;
+    left: -45px;
+}
+
+.bloom3 {
+    position: absolute;
+    right: -45px;
+    top: -350px;
+}
+
+.bloom4 {
+    position: absolute;
+    left: -45px;
+    top: -200px;
+}
+
+.bloom4 img {
+
+}
+
+.bloom5 {
+    position: absolute;
+    top: -200px;
+    z-index: 1;
+}
+
+
+.fobbl {
+    width: 395px;
+    height: 395px;
+    right: -45px;
+}
+.bubble {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    background: linear-gradient(-180deg, rgba(158, 141, 223, 70%) 0%, rgba(181, 167, 236, 70%) 14%, rgba(115, 40, 234, 70%) 58%, rgba(79, 153, 222, 70%) 100%);
+    box-shadow: inset 30.264217376708984px -30.264217376708984px 30.264217376708984px 0px rgba(165, 165, 165, 7%), inset -30.264217376708984px 30.264217376708984px 30.264217376708984px 0px rgba(255, 255, 255, 7%);
+}
+
+.fbbl {
+    width: 231px;
+    height: 231px;
+    top: 50px;
+    left: -366px;
+    z-index: 2;
+}
+
+.sbbl {
+    width: 268px;
+    height: 268px;
+    right: 50px;
+    z-index: 2;
+}
+
+.tbbl {
+    top: -95px;
+    left: -168px;
+    width: 395px;
+    height: 395px;
+    position: absolute;
+    z-index: 2;
+}
+
+.bloom1,
+.bloom2,
+.bloom3,
+.bloom4,
+.bloom5 {
+    user-select: none;
+    -webkit-user-select: none;  /* Для поддержки веб-кит браузеров */
+    -moz-user-select: none;     /* Для поддержки Firefox */
+    -ms-user-select: none;
 }

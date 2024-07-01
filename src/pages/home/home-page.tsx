@@ -89,7 +89,12 @@ const Intro = () => {
 					</div>
 				</div>
 			</motion.div>
-			<div className={styles.aboutB}>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8 }}
+				viewport={{ amount: 0.5, once: true }}
+				className={styles.aboutB}>
 				<div className={styles.aboutBL}>
 					<button className={`${styles.aboutBtn} ${styles.invert}`}>Как мы работаем?</button>
 					<button className={`${styles.aboutBtn} ${styles.aboutBtnS}`}>О компании</button>
@@ -102,7 +107,7 @@ const Intro = () => {
 					<div className={styles.aboutBRT}><span>Развитие альтернативных инвестиций</span> – наша миссия</div>
 					<div className={`${styles.aboutBRT} ${styles.aboutBRTS}`}><span>Индивидуальный подход</span> – наш принцип</div>
 				</div>
-			</div>
+			</motion.div>
 			<div className={styles.bloom1}>
 				<img src={bloom1} alt=""/>
 			</div>

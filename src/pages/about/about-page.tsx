@@ -297,8 +297,8 @@ const Persons = () => {
 						className={`${styles.bubble} ${styles.fobbl}`}></motion.div>
 				</div>
 				<div className={styles.siT}>
-					<span className={styles.pName}>Алексей Скобелев</span>
-					<span className={styles.pRole}>Co-founder, CEO</span>
+					<span className={styles.pName}>Василий Меловацкий</span>
+					<span className={styles.pRole}>Co-founder, COO</span>
 				</div>
 			</div>
 		</div>

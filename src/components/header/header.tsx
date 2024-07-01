@@ -30,18 +30,22 @@ const MenuButton: React.FC = () => {
 
 	const toHowToWork = () => {
 		navigate('/how-we-work')
+		toggleMenu()
 	}
 
 	const toAbout = () => {
 		navigate('/about')
+		toggleMenu()
 	}
 
 	const toPortfolio = () => {
 		navigate('/portfolio')
+		toggleMenu()
 	}
 
 	const toFaq = () => {
 		navigate('/faq')
+		toggleMenu()
 	}
 
 	return (

@@ -7,6 +7,7 @@ import HowWeWorkPage from "./pages/how-we-work/how-we-work-page.tsx";
 import PortfolioPage from "./pages/portfolio/portfolio-page.tsx";
 import Header from "./components/header/header.tsx";
 import Footer from "./components/footer/footer.tsx";
+import {useEffect} from "react";
 
 
 const FOOTER_TILE_MAP: Record<string, string> = {
@@ -19,6 +20,10 @@ const FOOTER_TILE_MAP: Record<string, string> = {
 
 function App() {
 	const location = useLocation()
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
 	return (
 	<>
 		<Header/>

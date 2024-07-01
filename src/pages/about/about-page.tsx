@@ -2,6 +2,7 @@ import styles from './about.module.css'
 import alex from '../../assets/about/alex.svg'
 import vas from '../../assets/about/vas.svg'
 import {motion} from "framer-motion";
+
 const Quotes = () => {
 	return (
 		<div className={styles.quotes}>
@@ -91,48 +92,121 @@ const Timeline = () => {
 	return (
 		<div className={styles.timeline}>
 			<div className={styles.topLine}></div>
-			<div className={`${styles.tblock} ${styles.fbl}`}>
-				<div className={`${styles.date} ${styles.fbdate}`}>Декабрь 2023</div>
-				<div className={`${styles.tblockText} ${styles.fbText}`}>
+			<motion.div
+				initial={{ opacity: 0,}}
+				whileInView={{ opacity: 1,}}
+				transition={{ duration: 0.8 }}
+				viewport={{ amount: 0.5, once: true }}
+				className={`${styles.tblock} ${styles.fbl}`}
+			>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.8 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.date} ${styles.fbdate}`}>
+					Декабрь 2023
+				</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.9 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.tblockText} ${styles.fbText}`}
+				>
 					Первая сделка через 1 инфлюенсера с лимитом в 1000$
-				</div>
+				</motion.div>
 				<div className={styles.fblB}></div>
-			</div>
+			</motion.div>
 			<div className={`${styles.tblock} ${styles.sbl}`}>
-				<div className={`${styles.date} ${styles.sbdate}`}>Январь 2024</div>
-				<div className={`${styles.tblockText} ${styles.sbtext}`}>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.8 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.date} ${styles.sbdate}`}
+				>Январь 2024</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.9 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.tblockText} ${styles.sbtext}`}
+				>
 					Вышли на маркетинговое агенство
-				</div>
+				</motion.div>
 				<div className={styles.sblB}></div>
 			</div>
 			<div className={`${styles.tblock} ${styles.tbl}`}>
-				<div className={`${styles.date} ${styles.tbdate}`}>Март 2024</div>
-				<div className={`${styles.tblockText} ${styles.tbtext}`}>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.8 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.date} ${styles.tbdate}`}
+				>Март 2024</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.9 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.tblockText} ${styles.tbtext}`}
+				>
 					Заключили первые крупные сделки
-				</div>
+				</motion.div>
 				<div className={styles.tblB}></div>
 			</div>
 			<div className={`${styles.tblock} ${styles.fobl}`}>
-				<div className={`${styles.date} ${styles.fobdate}`}>Апрель 2024</div>
-				<div className={`${styles.tblockText} ${styles.fobtext}`}>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.8 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.date} ${styles.fobdate}`}>Апрель 2024</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.9 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.tblockText} ${styles.fobtext}`}>
 					Вышли на новые маркетинговые агентства
-				</div>
+				</motion.div>
 				<div className={styles.sblB}></div>
 			</div>
 
 			<div className={`${styles.tblock} ${styles.fibl}`}>
-				<div className={`${styles.date} ${styles.fibdate}`}>Май-июнь 2024</div>
-				<div className={`${styles.tblockText} ${styles.fibText}`}>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.8 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.date} ${styles.fibdate}`}>Май-июнь 2024</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.9 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.tblockText} ${styles.fibText}`}>
 					вышли на рынок OTC и открыли новые направления в HFT, Pre-IPO
-				</div>
+				</motion.div>
 				<div className={styles.fblB}></div>
 			</div>
 
 			<div className={`${styles.tblock} ${styles.sibl}`}>
-				<div className={`${styles.date} ${styles.sibdate}`}>Июль 2024</div>
-				<div className={`${styles.tblockText} ${styles.sibtext}`}>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.8 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.date} ${styles.sibdate}`}>Июль 2024</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 50}}
+					whileInView={{ opacity: 1, y: 0}}
+					transition={{ duration: 0.9 }}
+					viewport={{ amount: 0.5, once: true }}
+					className={`${styles.tblockText} ${styles.sibtext}`}>
 					Легализация бизнеса
-				</div>
+				</motion.div>
 				<div className={styles.sblB}></div>
 			</div>
 			<div className={`${styles.tblock} ${styles.sevbl}`}>

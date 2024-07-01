@@ -18,7 +18,6 @@ const HowWeWorkPage = () => {
 	const is3InView = useInView(step3Ref, {amount: 0.8})
 	const is4InView = useInView(step4Ref, {amount: 0.8})
 
-	const [anim, setAnim] = useState(false)
 	const [step, setStep] = useState(1)
 
 	useEffect(() => {
@@ -34,8 +33,6 @@ const HowWeWorkPage = () => {
 		if (is4InView) {
 			setStep(4)
 		}
-		setAnim(true)
-		setTimeout(setAnim, 500, false)
 	}, [is1InView, is2InView, is3InView, is4InView])
 
 

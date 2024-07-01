@@ -5,13 +5,17 @@ import logo from '../../assets/logo/logosvg.svg'
 import {useEffect, useRef, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
+const isNode = (element: EventTarget | null): element is Node => {
+	return element instanceof Node;
+};
+
 const MenuButton: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const menuRef = useRef<HTMLDivElement>(null);
 	const navigate = useNavigate()
 
 	const handleClickOutside = (event: Event) => {
-		if (menuRef.current && !menuRef.current.contains(event.target)) {
+		if (menuRef.current && isNode(event.target) && !menuRef.current.contains(event.target)) {
 			setIsMenuOpen(false);
 		}
 	};

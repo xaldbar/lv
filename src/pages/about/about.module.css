@@ -309,6 +309,10 @@
 .pimg {
     position: relative;
     z-index: 3;
+    width: 550px;
+    height: 550px;
+    border-radius: 100%;
+    border: 15px solid #6d57b0;
 }
 
 .personText::before,

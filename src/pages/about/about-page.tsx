@@ -1,33 +1,71 @@
 import styles from './about.module.css'
 import alex from '../../assets/about/alex.svg'
 import vas from '../../assets/about/vas.svg'
+import {motion} from "framer-motion";
 const Quotes = () => {
 	return (
 		<div className={styles.quotes}>
-			<div>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8 }}
+				viewport={{ amount: 0.5, once: true }}
+			>
 				— <span className={styles.qH}>первый легальный Web3 фонд в России</span> <br/> Мы предлагаем нашим
 				клиентам заработать, вкладываясь в международные <br/>крипто-стартапы
-			</div>
-			<div className={styles.sq}>
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8, delay: 0.2 }}
+				viewport={{ amount: 0.5, once: true }}
+				className={styles.sq}
+			>
 				— глубокое понимание рынка и хорошая репутация – залог лучших предложений на рынке <br/>
 				Личное общение и следование принципам – премиального обслуживания
-			</div>
+			</motion.div>
 
-			<div className={styles.tq}>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8, delay: 0.4 }}
+				viewport={{ amount: 0.5, once: true }}
+				className={styles.tq}
+			>
 				— <span className={styles.qH}>наша миссия</span> – развивать альтернативные инвестиции в России
-			</div>
-			<div className={styles.fq}>
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8, delay: 0.6 }}
+				viewport={{ amount: 0.5, once: true }}
+				className={styles.fq}
+			>
 				— это неразрывно связано с <span className={styles.qH}>успешными инвестициями наших клиентов, ведь репутация – главное,</span> что
 				у нас есть
-			</div>
+			</motion.div>
 		</div>
 	)
 }
 const Values = () => {
 	return (
 		<div className={styles.values}>
-			<div className={styles.valuesTitle}>Наши ценности</div>
-			<div className={styles.valuesContent}>
+			<motion.div
+				className={styles.valuesTitle}
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8 }}
+				viewport={{ amount: 0.8, once: true }}
+			>
+				Наши ценности
+			</motion.div>
+			<motion.div
+				className={styles.valuesContent}
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8 }}
+				viewport={{ amount: 0.5, once: true }}
+			>
 				<div className={styles.circle}></div>
 				<div className={`${styles.valueItem} ${styles.fi}`}>
 					Премиальное обслуживание
@@ -44,7 +82,7 @@ const Values = () => {
 				<div className={`${styles.valueItem} ${styles.fai}`}>
 					Профессионализм и пунктуальность
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	)
 }

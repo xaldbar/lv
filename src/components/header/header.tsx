@@ -2,13 +2,28 @@ import styles from './header.module.css'
 import headerMenuButton from '../../assets/header-menu-button.svg'
 import logo from '../../assets/logo/logosvg.svg'
 
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
 const MenuButton: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const menuRef = useRef<HTMLDivElement>(null);
 	const navigate = useNavigate()
+
+	const handleClickOutside = (event: Event) => {
+		if (menuRef.current && !menuRef.current.contains(event.target)) {
+			setIsMenuOpen(false);
+		}
+	};
+
+	useEffect(() => {
+		document.addEventListener('click', handleClickOutside, true);
+
+		return () => {
+			document.removeEventListener('click', handleClickOutside, true);
+		};
+	}, []);
+
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
@@ -54,6 +69,9 @@ const Header = () => {
 	const toHome = () => {
 		navigate('/')
 	}
+
+
+
 	return (
 		<div className={styles.header}>
 			<div className={styles.headerWrapper}>

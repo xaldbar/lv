@@ -31,7 +31,7 @@ const MenuButton: React.FC = () => {
 	}, []);
 
 	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen);
+		setIsMenuOpen(open => !open	);
 	};
 
 	const toHowToWork = () => {
@@ -54,6 +54,14 @@ const MenuButton: React.FC = () => {
 		toggleMenu()
 	}
 
+	const toInvest = () => {
+
+		const element = document.getElementById('footer_invoice');
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+
 	return (
 		<div className={styles.menuContainer}>
 			<button onClick={toggleMenu} className={styles.menuButton}>
@@ -65,6 +73,7 @@ const MenuButton: React.FC = () => {
 					<button onClick={toAbout} className={styles.menuOptionsButton}>О компании</button>
 					<button onClick={toPortfolio} className={styles.menuOptionsButton}>Портфолио</button>
 					<button onClick={toFaq} className={styles.menuOptionsButton}>FAQ</button>
+					<button onClick={toInvest} className={`${styles.menuOptionsButton} ${styles.invOpt}`}>Инвестировать</button>
 				</div>
 			)}
 		</div>
@@ -93,12 +102,10 @@ const Header = () => {
 		return logo as string
 	}
 
-
-
 	return (
 		<div className={styles.header}>
 			<div className={styles.headerWrapper}>
-				<button onClick={toInvest} className={styles.menuButton}>
+				<button onClick={toInvest} className={`${styles.menuButton} ${styles.investBtn}`}>
 					Инвестировать
 				</button>
 				<button onClick={toHome} className={styles.logo}>

@@ -370,3 +370,83 @@
     }
 
 }
+
+
+@media (max-width: 550px) {
+    .footer {
+        margin: 0;
+        padding: 0 15px;
+    }
+    .footerTitle {
+        display: flex;
+        font-size: 25px;
+        line-height: 30px;
+        margin-left: 0;
+        padding-bottom: 0;
+    }
+
+    .footerCaption {
+        text-align: center;
+        font-size: 16px;
+        margin-top: 35px;
+        margin-left: 0;
+    }
+
+    .submit {
+        font-size: 18px;
+        padding: 20px 20px;
+        border-radius: 15px;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottom {
+        justify-content: center;
+    }
+
+
+    .formLabel {
+        color: #fff;
+    }
+
+    .formField {
+        border-bottom: 2px solid #fff;
+    }
+
+    .inputGroup {
+        width: calc(90%);
+    }
+
+    .footerBottom {
+        column-gap: 12px;
+        font-size: 12px;
+    }
+
+    .fbCol {
+        width: 100%;
+    }
+
+    .footerContact {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .footerLogo img {
+        max-width: 120px;
+    }
+
+    .footerBottom {
+        grid-template-columns: 1fr;
+    }
+
+    .fbCol {
+        margin-bottom: 45px;
+    }
+
+}

@@ -112,7 +112,7 @@ const Intro = () => {
 					<div className={styles.pad}>
 						Мы проверили стратегии на своих деньгах и <span>готовы представить</span> их всем
 					</div>
-					<div>
+					<div className={styles.pad}>
 						Нас выбирают за <span>качественную работу и свежий взгляд</span> на рынок
 					</div>
 				</div>
@@ -126,14 +126,18 @@ const Intro = () => {
 				<div className={styles.introTitle}>
 					<div className={styles.titleText}>
 						<div className={styles.ttt}>LOONA VENTURES</div>
-						<motion.div
-							animate={{
-								top: isMobile() ? ['-130px', '-140px', '-130px'] : ['-110px', '-120px', '-110px'],
-							}}
-							transition={{repeat: Infinity, duration: 4}}
-							className={`${styles.bubble} ${styles.lb}`}
-						></motion.div>
-						<div className={`${styles.bubble} ${styles.rb}`}></div>
+						{!isMobile() ? (
+							<>
+								<motion.div
+									animate={{
+										top: isMobile() ? ['-130px', '-140px', '-130px'] : ['-110px', '-120px', '-110px'],
+									}}
+									transition={{repeat: Infinity, duration: 4}}
+									className={`${styles.bubble} ${styles.lb}`}
+								></motion.div>
+								<div className={`${styles.bubble} ${styles.rb}`}></div>
+							</>
+						) : null}
 					</div>
 				</div>
 				<div className={styles.introCaption}>
@@ -141,7 +145,7 @@ const Intro = () => {
 					<div className={styles.introCapBtm}>
 						<div className={styles.www}>
 							удобно, понятно, прибыльно
-							<div className={`${styles.bubble} ${styles.mb}`}></div>
+							{!isMobile() ? (<div className={`${styles.bubble} ${styles.mb}`}></div>) : null}
 						</div>
 					</div>
 
@@ -186,17 +190,19 @@ const Intro = () => {
 			</motion.div>
 
 
-			<div className={styles.bloom1}>
-				<img src={bloom1} alt=""/>
-			</div>
-			<div className={styles.bloom2}>
-				<img src={bloom2} alt=""/>
-			</div>
+			{!isMobile() ? (
+				<>
+					<div className={styles.bloom1}>
+						<img src={bloom1} alt=""/>
+					</div>
+					<div className={styles.bloom2}>
+						<img src={bloom2} alt=""/>
+					</div>
+				</>
+			) : null}
 		</div>
 	)
 }
-
-
 
 
 const HomePage = () => {

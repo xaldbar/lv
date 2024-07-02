@@ -73,6 +73,7 @@
     height: 50px;
 }
 
+
 .logo,
 .menuButton,
 .menuOptionsButton {
@@ -81,6 +82,10 @@
 
 .menuButton:hover {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+}
+
+.invOpt {
+    display: none;
 }
 
 @media (max-width: 769px) {
@@ -96,5 +101,43 @@
         font-size: 20px;
         min-height: 44px;
         height: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .headerWrapper {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 8px;
+    }
+
+    .menuButton {
+        font-size: 12px;
+    }
+
+    .menuOptionsButton {
+        font-size: 12px;
+        min-height: 44px;
+        height: auto;
+    }
+
+    .menuButtonImg {
+        width: 40px;
+    }
+
+    .menuButton {
+        padding: 0;
+        border-radius: 10px;
+    }
+
+    .logo {
+        border-radius: 10px;
+    }
+
+    .investBtn {
+        display: none;
+    }
+
+    .invOpt {
+        display: block;
     }
 }

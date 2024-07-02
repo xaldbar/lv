@@ -7,7 +7,6 @@ import PhoneIcon from '../../assets/footer/icons/Phone.svg'
 import EmailIcon from '../../assets/footer/icons/Email.svg'
 import {motion} from "framer-motion";
 import {useWidth} from "../../hooks/use-width.ts";
-import logo_s from "../../assets/logo/logo_s.svg";
 
 export interface InputProps {
 	type: 'text' | 'tel'
@@ -37,7 +36,7 @@ const Footer: FC<FooterProps> = (props) => {
 
 	const getLogo = (): string => {
 		if (width < 769) {
-			return logo_s as string
+			return logoS as string
 		}
 
 		return logo as string

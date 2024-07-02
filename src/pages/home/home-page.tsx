@@ -128,7 +128,7 @@ const Intro = () => {
 						<div className={styles.ttt}>LOONA VENTURES</div>
 						<motion.div
 							animate={{
-								top: isMobile ? ['-130px', '-140px', '-130px'] : ['-110px', '-120px', '-110px'],
+								top: isMobile() ? ['-130px', '-140px', '-130px'] : ['-110px', '-120px', '-110px'],
 							}}
 							transition={{repeat: Infinity, duration: 4}}
 							className={`${styles.bubble} ${styles.lb}`}

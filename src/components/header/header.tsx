@@ -102,8 +102,24 @@ const Header = () => {
 		return logo as string
 	}
 
+	const handleScroll = () => {
+		if (window.scrollY > 0) {
+			setHeaderBackground('#2D2A2F'); // Change the color to your preference
+		} else {
+			setHeaderBackground('transparent'); // Change to initial state
+		}
+	};
+
+	const [headerBackground, setHeaderBackground] = useState('transparent');
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
-		<div className={styles.header}>
+		<div className={styles.header} style={{ background: headerBackground }}>
 			<div className={styles.headerWrapper}>
 				<button onClick={toInvest} className={`${styles.menuButton} ${styles.investBtn}`}>
 					Инвестировать

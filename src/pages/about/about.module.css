@@ -15,7 +15,7 @@
     position: relative;
     margin-top: 120px;
     font-size: 40px;
-    z-index: 3;
+    z-index: 50;
 }
 
 .qH {
@@ -42,7 +42,7 @@
 .values {
     margin-top: 300px;
     position: relative;
-    z-index: 3;
+    z-index: 50;
 }
 
 .valuesTitle {
@@ -378,24 +378,27 @@
     top: -50px;
     position: absolute;
     left: 300px;
+    z-index: -1;
 }
 
 .bloom2 {
     position: absolute;
     top: 50px;
-    z-index: 1;
+    z-index: -1;
     left: -45px;
 }
 
 .bloom3 {
     position: absolute;
     right: -45px;
+    z-index: -1;
     top: -350px;
 }
 
 .bloom4 {
     position: absolute;
     left: -45px;
+    z-index: -1;
     top: -200px;
 }
 
@@ -406,7 +409,7 @@
 .bloom5 {
     position: absolute;
     top: -200px;
-    z-index: 1;
+    z-index: -1;
 }
 
 
@@ -456,4 +459,228 @@
     -webkit-user-select: none;  /* Для поддержки веб-кит браузеров */
     -moz-user-select: none;     /* Для поддержки Firefox */
     -ms-user-select: none;
+}
+
+@media (max-width: 1600px) {
+    .pageTitle {
+        font-size: 45px;
+    }
+
+    .quotes {
+        font-size: 30px;
+    }
+
+    .fbbl {
+        left: -700px;
+    }
+
+    .sbbl {
+        right: -200px;
+    }
+
+    .valuesTitle {
+        font-size: 45px;
+    }
+
+    .circle {
+        width: 500px;
+        height: 500px;
+    }
+
+    .valueItem {
+        position: relative;
+        z-index: 5;
+        font-size: 30px;
+    }
+
+    .fi {
+        margin-top: 67px;
+        margin-left: calc(50% - 315px + 390px);
+    }
+
+    .si {
+        margin-top: 0;
+        margin-left: calc(50% - 315px - 215px);
+    }
+
+    .ti {
+        margin-top: 112px;
+        margin-left: calc(50% - 315px + 480px);
+        padding: 8px 20px;
+    }
+
+    .foi {
+        margin-top: -15px;
+        margin-left: calc(50% - 315px - 116px);
+        padding: 8px 30px;
+    }
+
+    .fai {
+        margin-top: 76px;
+        margin-left: calc(50% - 315px + 140px);
+    }
+
+    .date {
+        text-shadow: none;
+        font-size: 48px;
+    }
+
+    .tblockText {
+        font-size: 38px;
+    }
+
+    .fbl {
+        row-gap: 35px;
+        padding-bottom: 35px;
+    }
+
+    .sbl {
+        row-gap: 55px;
+    }
+
+    .sbtext {
+        margin-bottom: 35px;
+    }
+
+    .tbl {
+        row-gap: 97px;
+        padding-bottom: 35px;
+    }
+
+    .fobl {
+        row-gap: 58px;
+        padding-bottom: 35px;
+    }
+
+    .fibl {
+        row-gap: 67px;
+        padding-bottom: 20px;
+    }
+
+    .sibl {
+        row-gap: 81px;
+        padding-bottom: 35px;
+    }
+
+    .piT {
+        margin-top: -75px;
+    }
+}
+
+@media (max-width: 769px) {
+    .aboutPage {
+        padding-top: 100px;
+    }
+
+    .pageTitle {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .quotes {
+
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .fbbl {
+        left: -200px;
+    }
+
+    .sq,
+    .tq,
+    .fq {
+        margin-left: 0;
+    }
+
+    .valuesTitle {
+        font-size: 50px;
+    }
+
+    .circle {
+        width: 400px;
+        height: 400px;
+    }
+
+    .valueItem {
+        font-size: 20px;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    .fi {
+        width: 350px;
+        margin-left: calc(50% - 315px + 220px);
+    }
+
+    .si {
+        margin-top: 27px;
+        margin-left: calc(50% - 315px - 30px);
+    }
+
+    .ti {
+        margin-top: 18px;
+        margin-left: calc(50% - 315px + 450px);
+    }
+
+    .foi {
+        margin-top: 0;
+        margin-left: calc(50% - 315px - 10px);
+    }
+
+    .fai {
+        margin-top: 31px;
+        margin-left: calc(50% - 315px + 190px);
+    }
+
+    .date {
+        border-radius: 10px;
+        text-align: center;
+        width: 223px;
+        padding: 12px 0;
+        font-size: 25px;
+    }
+
+    .tblockText {
+        font-size: 20px;
+    }
+
+    .fibl {
+        margin-top: 50px;
+    }
+
+    .sevbl {
+        height: 150px;
+    }
+
+    .person {
+        column-gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .piT {
+        margin-top: 0;
+        order: 1;
+        margin-bottom: 90px;
+    }
+
+    .siT {
+        margin-bottom: 90px;
+    }
+
+    .pimg {
+        width: 376px;
+        height: 376px;
+        order: 0;
+    }
+
+    .personText {
+        font-size: 20px;
+        order: 2;
+    }
+
+    .bloom4 {
+        left: -300px;
+    }
 }

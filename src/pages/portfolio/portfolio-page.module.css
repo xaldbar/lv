@@ -5,6 +5,10 @@
     color: #fff;
 }
 
+.tableBody {
+    overflow: hidden;
+}
+
 .portfolioHeader {
     font-size: 70px;
     font-weight: 600;
@@ -13,9 +17,10 @@
 }
 
 .portfolioBloom {
-    top: 0;
-    right: 0;
+    top: -120px;
+    right: -45px;
     position: absolute;
+    z-index: -1;
 }
 
 .tableRow {
@@ -27,6 +32,13 @@
     padding: 4px 25px;
     border-radius: 30px;
     align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.tableRow.tableRowBody:hover {
+    background-color: #fff;
+    border-color: #231F20;
+    color: #212121;
 }
 
 .tableRow.tableHead {
@@ -50,6 +62,17 @@
     position: relative;
     border-right: 0;
     margin-bottom: 15px;
+    height: 40px;
+
+}
+
+.tableRowBody:hover .rowLink {
+    fill: #000;
+    border-color: #231F20;
+}
+
+.tableRowBody:hover .arrowIcon {
+    filter: hue-rotate(180deg);
 }
 
 .rowLink {
@@ -62,7 +85,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2D2A2F;
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -71,4 +94,30 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 60px;
+}
+
+@media (max-width: 1600px) {
+    .caption {
+        font-size: 30px;
+    }
+
+    .portfolioHeader {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 769px) {
+    .tableRow {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .caption {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .portfolioHeader {
+        font-size: 50px;
+    }
 }

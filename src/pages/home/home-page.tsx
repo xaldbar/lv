@@ -6,6 +6,7 @@ import {motion} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useInView} from "framer-motion";
+import {useWidth} from "../../hooks/use-width.ts";
 
 
 function useCounterAnimation(value: number, time: number, start: boolean, toFixed?: number) {
@@ -44,6 +45,81 @@ const Intro = () => {
 		navigate('/portfolio')
 	}
 
+	const width = useWidth()
+
+	const isMobile = () => width < 769
+
+	const renderIntroInfoContent = (isMob: boolean) => {
+		if (!isMob) {
+			return (
+				<>
+					<div className={styles.introText}>
+						<div className={styles.itf}>
+							<span>Loona Ventures</span> - это <span>прибыль и индивидуальный подход</span> для каждого
+							клиента
+						</div>
+						<div>
+							Мы проверили стратегии на своих деньгах и <span>готовы представить</span> их всем
+						</div>
+						<div>
+							Нас выбирают за <span>качественную работу и свежий взгляд</span> на рынок
+						</div>
+					</div>
+					<motion.div ref={bwRef} className={styles.introBlocks}>
+						<div className={styles.blocksWrapper}>
+							<div className={styles.block1}>
+								<div className={styles.b1h}>{firstCounter}%</div>
+								<div className={styles.b1c}>Среднегодовая доходность</div>
+							</div>
+							<div className={styles.block2}>
+								<div className={styles.b2h}>${secondCounter}k</div>
+								<div className={styles.b2c}>Средств под управлением</div>
+							</div>
+						</div>
+						<div className={styles.block3}>
+							<div className={styles.b1h}>{thirdCounter}+</div>
+							<div className={styles.b1c}>Проектов</div>
+						</div>
+					</motion.div>
+				</>
+			)
+		}
+		return (
+			<div className={styles.mobileIntroInfoContent}>
+				<div className={styles.itf}>
+					<div className={styles.pad}>
+						<span>Loona Ventures</span> - это <span>прибыль и индивидуальный подход</span> для каждого
+						клиента
+					</div>
+					<div className={styles.wrapwrapwrap}>
+						<motion.div ref={bwRef} className={styles.introBlocks}>
+							<div className={styles.blocksWrapper}>
+								<div className={styles.block1}>
+									<div className={styles.b1h}>{firstCounter}%</div>
+									<div className={styles.b1c}>Среднегодовая доходность</div>
+								</div>
+								<div className={styles.block2}>
+									<div className={styles.b2h}>${secondCounter}k</div>
+									<div className={styles.b2c}>Средств под управлением</div>
+								</div>
+							</div>
+							<div className={styles.block3}>
+								<div className={styles.b1h}>{thirdCounter}+</div>
+								<div className={styles.b1c}>Проектов</div>
+							</div>
+						</motion.div>
+					</div>
+					<div className={styles.pad}>
+						Мы проверили стратегии на своих деньгах и <span>готовы представить</span> их всем
+					</div>
+					<div>
+						Нас выбирают за <span>качественную работу и свежий взгляд</span> на рынок
+					</div>
+				</div>
+			</div>
+		)
+	}
+
 	return (
 		<div className={styles.intro}>
 			<div>
@@ -52,9 +128,9 @@ const Intro = () => {
 						<div className={styles.ttt}>LOONA VENTURES</div>
 						<motion.div
 							animate={{
-								top: ['-110px', '-120px', '-110px'],
+								top: isMobile ? ['-130px', '-140px', '-130px'] : ['-110px', '-120px', '-110px'],
 							}}
-							transition={{ repeat: Infinity, duration: 4 }}
+							transition={{repeat: Infinity, duration: 4}}
 							className={`${styles.bubble} ${styles.lb}`}
 						></motion.div>
 						<div className={`${styles.bubble} ${styles.rb}`}></div>
@@ -70,45 +146,19 @@ const Intro = () => {
 					</div>
 
 				</div>
-
-
 			</div>
+
 			<motion.div
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8 }}
-				viewport={{ amount: 0.5, once: true }}
+				initial={{opacity: 0, y: 100}}
+				whileInView={{opacity: 1, y: 0}}
+				transition={{duration: 0.8}}
+				viewport={{amount: 0.5, once: true}}
 				className={styles.introInfo}
 			>
-				<div className={styles.introText}>
-					<div className={styles.itf}>
-						<span>Loona Ventures</span> - это <span>прибыль и индивидуальный подход</span> для каждого
-						клиента
-					</div>
-					<div>
-						Мы проверили стратегии на своих деньгах и <span>готовы представить</span> их всем
-					</div>
-					<div>
-						Нас выбирают за <span>качественную работу и свежий взгляд</span> на рынок
-					</div>
-				</div>
-				<motion.div ref={bwRef} className={styles.introBlocks}>
-					<div className={styles.blocksWrapper}>
-						<div className={styles.block1}>
-							<div className={styles.b1h}>{firstCounter}%</div>
-							<div className={styles.b1c}>Среднегодовая доходность</div>
-						</div>
-						<div className={styles.block2}>
-							<div className={styles.b2h}>${secondCounter}k</div>
-							<div className={styles.b2c}>Средств под управлением</div>
-						</div>
-					</div>
-					<div className={styles.block3}>
-						<div className={styles.b1h}>{thirdCounter}+</div>
-						<div className={styles.b1c}>Проектов</div>
-					</div>
-				</motion.div>
+			{renderIntroInfoContent(isMobile())}
 			</motion.div>
+
+
 			<motion.div
 				initial={{ opacity: 0, y: 100 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -119,15 +169,23 @@ const Intro = () => {
 					<button onClick={toHww} className={`${styles.aboutBtn} ${styles.invert}`}>Как мы работаем?</button>
 					<button onClick={toAbout} className={`${styles.aboutBtn} ${styles.aboutBtnS}`}>О компании</button>
 					<button onClick={toPortfolio} className={`${styles.aboutBtn} ${styles.aboutBtnT}`}>Портфолио</button>
-					<div className={styles.bloom3}>
-						<img src={bloom3} alt=""/>
-					</div>
+					{isMobile() ? null : (
+						<div className={styles.bloom3}>
+							<img src={bloom3} alt=""/>
+						</div>
+					)}
 				</div>
 				<div className={styles.aboutBR}>
-					<div className={styles.aboutBRT}><span>Развитие альтернативных инвестиций</span> – наша миссия</div>
-					<div className={`${styles.aboutBRT} ${styles.aboutBRTS}`}><span>Индивидуальный подход</span> – наш принцип</div>
+					<div className={styles.aboutBRT}>
+						<div><span>Развитие альтернативных инвестиций</span> – наша миссия</div>
+					</div>
+					<div className={`${styles.aboutBRT} ${styles.aboutBRTS}`}>
+						<div><span>Индивидуальный подход</span> – наш принцип</div>
+						</div>
 				</div>
 			</motion.div>
+
+
 			<div className={styles.bloom1}>
 				<img src={bloom1} alt=""/>
 			</div>

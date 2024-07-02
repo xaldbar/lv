@@ -9,8 +9,10 @@ import OracleLogo from '../../assets/portfolio/oracle.svg'
 import FuelLogo from '../../assets/portfolio/fuel.svg'
 import MonadLogo from '../../assets/portfolio/monad.svg'
 import ArrowIcon from '../../assets/portfolio/arrow-icon.svg'
-import {FC, useRef} from "react";
+import BArrowIcon from '../../assets/portfolio/barrow.svg'
+import {FC, useRef, useState} from "react";
 import {motion} from "framer-motion";
+import bloom1 from '../../assets/portfolio/bloom1.svg'
 
 export interface TableRowProps {
 	logo: any
@@ -89,6 +91,12 @@ const projects: TableRowProps[] = [
 
 const TableRow: FC<TableRowProps> = (props) => {
 	const rowRef = useRef(null)
+	const [isHovered, setIsHovered] = useState(false);
+
+	const getArrow = (): string => {
+		return isHovered ? BArrowIcon : ArrowIcon
+	}
+
 	return (
 		<motion.div
 			ref={rowRef}
@@ -96,6 +104,8 @@ const TableRow: FC<TableRowProps> = (props) => {
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 1, delay: 0.1 + (((props.index ?? 0) + 1) * 0.05) }}
 			viewport={{ amount: 0.01, once: true }}
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
 			className={`${styles.tableRow} ${styles.tableRowBody}`}
 		>
 			<div className={styles.projectName}>
@@ -105,7 +115,7 @@ const TableRow: FC<TableRowProps> = (props) => {
 			<div>{props.sphere}</div>
 			<div>{props.round}</div>
 			<a href={props.href} className={styles.rowLink} target={'_blank'}>
-				<img src={ArrowIcon} alt=""/>
+				<img  className={styles.arrowIcon} src={getArrow()} alt=""/>
 			</a>
 		</motion.div>
 	)
@@ -121,18 +131,24 @@ const PortfolioPage = () => {
 				<div>Сфера</div>
 				<div>Раунд</div>
 			</div>
-			{projects.map((item, index) => (
-				<TableRow
-					logo={item.logo}
-					name={item.name}
-					sphere={item.sphere}
-					round={item.round}
-					href={item.href}
-					index={index}
-				/>
-			))}
+			<div className={styles.tableBody}>
+				{projects.map((item, index) => (
+					<TableRow
+						key={index}
+						logo={item.logo}
+						name={item.name}
+						sphere={item.sphere}
+						round={item.round}
+						href={item.href}
+						index={index}
+					/>
+				))}
+			</div>
 			<div className={styles.caption}>
 				* представлено не все портфолио, проекты выбраны случайно. Подробности обсуждаются лично
+			</div>
+			<div className={styles.portfolioBloom}>
+				<img src={bloom1} alt=""/>
 			</div>
 		</div>
 	);

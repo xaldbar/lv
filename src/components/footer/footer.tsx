@@ -1,10 +1,13 @@
 import {FC} from "react";
 import styles from './footer.module.css'
 import logo from '../../assets/logo/logosvg.svg'
+import logoS from '../../assets/logo/logo_s.svg'
 import bloom from '../../assets/footer/bloom.svg'
 import PhoneIcon from '../../assets/footer/icons/Phone.svg'
 import EmailIcon from '../../assets/footer/icons/Email.svg'
 import {motion} from "framer-motion";
+import {useWidth} from "../../hooks/use-width.ts";
+import logo_s from "../../assets/logo/logo_s.svg";
 
 export interface InputProps {
 	type: 'text' | 'tel'
@@ -29,13 +32,23 @@ const FooterInput: FC<InputProps> = (props: InputProps) => {
 }
 
 const Footer: FC<FooterProps> = (props) => {
+	const width = useWidth()
+	const isMobile = (): boolean => width < 769
+
+	const getLogo = (): string => {
+		if (width < 769) {
+			return logo_s as string
+		}
+
+		return logo as string
+	}
 	return (
 		<div id={'footer_invoice'} className={styles.footer}>
 			<div className={styles.footerTop}>
 				<div className={styles.footerTitle}>{props.title}</div>
-				<div className={styles.separator}></div>
+				{!isMobile() ? <div className={styles.separator}></div> : null}
 				<div className={styles.footerCaption}>
-					Оставьте заявку и менеджер свяжется с вами в ближайшее время
+					Оставьте заявку и менеджер свяжется {isMobile() ? <br/> : null} с вами в ближайшее время
 				</div>
 				<form action="" className={styles.footerForm}>
 					<div className={styles.inputs}>
@@ -57,12 +70,14 @@ const Footer: FC<FooterProps> = (props) => {
 					</div>
 					<div className={styles.bottom}>
 						<button className={styles.submit}>Получить консультацию</button>
-						<div className={styles.logo}>
-							<img src={logo} alt=""/>
-						</div>
+						{!isMobile() ? (
+							<div className={styles.logo}>
+								<img src={logo} alt=""/>
+							</div>
+						) : null}
 					</div>
 				</form>
-				<div className={styles.separator}></div>
+				{!isMobile() ? <div className={styles.separator}></div> : null}
 				<div className={styles.bloom}>
 					<img src={bloom}/>
 				</div>
@@ -99,7 +114,7 @@ const Footer: FC<FooterProps> = (props) => {
 			<div className={styles.footerBottom}>
 				<div className={styles.fbCol}>
 					<div className={styles.footerLogo}>
-						<img src={logo} alt=""/>
+						<img src={getLogo()} alt=""/>
 					</div>
 					<div className={`${styles.separator} ${styles.separatorF} ${styles.inv}`}></div>
 					<div>© 2024 ООО «Луна Венчурс», все права защищены</div>

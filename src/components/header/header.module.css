@@ -82,3 +82,19 @@
 .menuButton:hover {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
 }
+
+@media (max-width: 769px) {
+    .headerWrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .menuButton {
+        font-size: 20px;
+    }
+
+    .menuOptionsButton {
+        font-size: 20px;
+        min-height: 44px;
+        height: auto;
+    }
+}

@@ -7,8 +7,19 @@ import bloom2 from '../../assets/about/bloom2.svg'
 import bloom3 from '../../assets/about/bloom3.svg'
 import bloom4 from '../../assets/about/bloom4.svg'
 import bloom5 from '../../assets/about/bloom5.svg'
+import {useWidth} from "../../hooks/use-width.ts";
+import {useEffect, useState} from "react";
 
 const Quotes = () => {
+	const screenWidth = useWidth()
+	const [isMac, setIsMac] = useState(false);
+	useEffect(() => {
+		if (screenWidth < 1680) {
+			setIsMac(true)
+		}
+	}, [])
+
+	const isMobile = () => screenWidth < 769
 	return (
 		<div className={styles.quotes}>
 			<motion.div
@@ -17,7 +28,7 @@ const Quotes = () => {
 				transition={{duration: 0.8}}
 				viewport={{amount: 0.5, once: true}}
 			>
-				— <span className={styles.qH}>первый легальный Web3 фонд в России</span> <br/> Мы предлагаем нашим
+				{isMobile() ? null : '— '} <span className={styles.qH}>первый легальный Web3 фонд в России</span> <br/> Мы предлагаем нашим
 				клиентам заработать, вкладываясь в международные <br/>крипто-стартапы
 			</motion.div>
 			<motion.div
@@ -27,7 +38,7 @@ const Quotes = () => {
 				viewport={{amount: 0.5, once: true}}
 				className={styles.sq}
 			>
-				— глубокое понимание рынка и хорошая репутация – залог лучших предложений на рынке <br/>
+				{isMobile() ? null : '— '} глубокое понимание рынка и хорошая репутация – залог лучших предложений на рынке <br/>
 				Личное общение и следование принципам – премиального обслуживания
 			</motion.div>
 
@@ -38,7 +49,7 @@ const Quotes = () => {
 				viewport={{amount: 0.5, once: true}}
 				className={styles.tq}
 			>
-				— <span className={styles.qH}>наша миссия</span> – развивать альтернативные инвестиции в России
+				{isMobile() ? null : '— '} <span className={styles.qH}>наша миссия</span> – развивать альтернативные инвестиции в России
 			</motion.div>
 			<motion.div
 				initial={{opacity: 0, y: 100}}
@@ -47,12 +58,12 @@ const Quotes = () => {
 				viewport={{amount: 0.9, once: true}}
 				className={styles.fq}
 			>
-				— это неразрывно связано с <span className={styles.qH}>успешными инвестициями наших клиентов, ведь репутация – главное,</span> что
+				{isMobile() ? null : '— '} это неразрывно связано с <span className={styles.qH}>успешными инвестициями наших клиентов, ведь репутация – главное,</span> что
 				у нас есть
 				<motion.div
 					transition={{ repeat: Infinity, duration: 7, delay: 0}}
 					animate={{
-						top: [30, 70, 30],
+						top: isMac ? [290, 300, 290] : [30, 70, 30],
 					}}
 					className={`${styles.bubble} ${styles.fbbl}`}
 				></motion.div>

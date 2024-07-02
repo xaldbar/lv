@@ -1,7 +1,11 @@
 import styles from './faq.module.css'
 import arrowIcon from '../../assets/faq/arrowIcon.svg'
+import arrowIconS from '../../assets/faq/faq_ar_s.svg'
+import bloom1 from '../../assets/faq/bloom1.svg'
+import bloom2 from '../../assets/faq/bloom2.svg'
 import {FC, useState} from "react";
 import {motion} from "framer-motion";
+import {useWidth} from "../../hooks/use-width.ts";
 
 export interface QuestionProps {
 	content: any
@@ -12,12 +16,12 @@ const questions: QuestionProps[] = [
 	{
 		content: (
 			<div>
-				Связаться с маркетинговыми агенствами или выйти на OTC рынок – непростая задача.
-				В этой сфере все держится на репутации и личных связях.
-				Благодаря тому, что мы давно на рынке, нам предлагают условия лучше, чем тем, с кем еще не работали.
-				А еще необходимо качественно выбирать проекты, ведь мошенничество и невыгодные условия в финансах повсюду.
-				К тому же, заходить в сделку совместно с другими людьми сильно выгоднее – чем крупнее сумма, тем ниже цена.
-				Вместе с тем, мы предоставляем полное сопровождение на каждом этапе сделки. Мы берем на себе функцию фиксации прибыли клиента.
+				Связаться с маркетинговыми агенствами или выйти на OTC рынок – непростая задача. <br/>
+				В этой сфере все держится на репутации и личных связях. <br/><br/>
+				Благодаря тому, что мы давно на рынке, нам предлагают условия лучше, чем тем, с кем еще не работали. <br/>
+				А еще необходимо качественно выбирать проекты, ведь мошенничество и невыгодные условия в финансах повсюду. <br/><br/>
+				К тому же, заходить в сделку совместно с другими людьми сильно выгоднее – чем крупнее сумма, тем ниже цена. <br/><br/>
+				Вместе с тем, мы предоставляем полное сопровождение на каждом этапе сделки. Мы берем на себе функцию фиксации прибыли клиента. <br/><br/>
 				Кроме того, мы готовы защищать интересы клиентов в любой ситуации
 			</div>
 		),
@@ -76,12 +80,19 @@ const questions: QuestionProps[] = [
 
 const Question: FC<QuestionProps> = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
+	const width = useWidth()
 
+	const getImage = (): string => {
+		if (width < 1600) {
+			return arrowIconS as string
+		}
+		return arrowIcon as string
+	}
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 100 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.8 }}
+			transition={{ duration: 0.8, delay: 0.1 }}
 			viewport={{ amount: 0.1, once: true }}
 			className={styles.q}
 		>
@@ -92,7 +103,7 @@ const Question: FC<QuestionProps> = (props) => {
 					onClick={() => {
 					setIsOpen(open => !open)
 				}}>
-					<img src={arrowIcon}/>
+					<img src={getImage()}/>
 				</div>
 			</div>
 			{isOpen ? (
@@ -107,11 +118,17 @@ const Question: FC<QuestionProps> = (props) => {
 const FaqPage = () => {
 	return (
 		<div className={styles.faqPage}>
+			<div className={styles.bloom1}>
+				<img src={bloom1} alt=""/>
+			</div>
+			<div className={styles.bloom2}>
+				<img src={bloom2} alt=""/>
+			</div>
 			<div className={styles.pageTitle}>Вопросы и ответы</div>
-
 			<div className={styles.questions}>
-				{questions.map((q) => (
+				{questions.map((q, index) => (
 					<Question
+						key={index}
 						title={q.title}
 						content={q.content}
 					/>

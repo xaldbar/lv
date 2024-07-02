@@ -18,10 +18,19 @@ const FOOTER_TILE_MAP: Record<string, string> = {
 	'/how-we-work': 'Остались вопросы? Задайте лично',
 }
 
+const PAGE_TITLE_MAP: Record<string, string> = {
+	'/': 'loonaventures',
+	'/faq': 'FAQ',
+	'/about': 'О компании',
+	'/portfolio': 'Портфолио',
+	'/how-we-work': 'Как мы работаем',
+}
+
 function App() {
 	const location = useLocation()
 
 	useEffect(() => {
+		document.title = PAGE_TITLE_MAP[location.pathname] ?? 'loonaventures'
 		window.scrollTo(0, 0);
 	}, [location]);
 	return (

@@ -5,6 +5,9 @@ import step1 from '../../assets/hww/step1.svg'
 import step2 from '../../assets/hww/step2.svg'
 import step3 from '../../assets/hww/step3.svg'
 import step4 from '../../assets/hww/step4.svg'
+import bloom1 from '../../assets/hww/bloom1.svg'
+import bloom2 from '../../assets/hww/bloom2.svg'
+import bloom3 from '../../assets/hww/bloom3.svg'
 import {useInView} from "framer-motion";
 
 const HowWeWorkPage = () => {
@@ -50,6 +53,9 @@ const HowWeWorkPage = () => {
 	}, [])
 	return (
 		<div className={styles.howWeWorkPage}>
+			<div className={styles.bloom1}>
+				<img src={bloom1} alt=""/>
+			</div>
 			<div className={styles.text}>
 				<div className={styles.textLeft}>
 					<div className={styles.textTitle}>Как мы работаем?</div>
@@ -129,6 +135,9 @@ const HowWeWorkPage = () => {
 								получая токены ниже рыночной и будущей цены проекта
 							</div>
 						</div>
+						<div className={styles.bloom2}>
+							<img src={bloom2} alt=""/>
+						</div>
 					</div>
 
 					<div ref={step3Ref} className={styles.textBlock}>
@@ -188,10 +197,13 @@ const HowWeWorkPage = () => {
 					</div>
 				</div>
 				<div className={styles.slider}>
-					{step === 1  ? <img className={styles.sliderImage} src={step1} alt=""/> : null}
-					{step === 2  ? <img className={styles.sliderImage} src={step2} alt=""/> : null}
-					{step === 3  ? <img className={styles.sliderImage} src={step3} alt=""/> : null}
-					{step === 4  ? <img className={styles.sliderImage} src={step4} alt=""/> : null}
+					{step === 1 ? <img className={styles.sliderImage} src={step1} alt=""/> : null}
+					{step === 2 ? <img className={styles.sliderImage} src={step2} alt=""/> : null}
+					{step === 3 ? <img className={styles.sliderImage} src={step3} alt=""/> : null}
+					{step === 4 ? <img className={styles.sliderImage} src={step4} alt=""/> : null}
+				</div>
+				<div className={styles.bloom3}>
+					<img src={bloom3} alt=""/>
 				</div>
 			</div>
 		</div>

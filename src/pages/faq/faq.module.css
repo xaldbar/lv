@@ -1,9 +1,24 @@
 .faqPage {
-    margin-top: 250px;
+    position: relative;
+    padding-top: 250px;
     padding-right: 45px;
     padding-left: 45px;
     color: #fff;
     padding-bottom: 137px;
+}
+
+.bloom1 {
+    position: absolute;
+    left: -45px;
+    top: -120px;
+    z-index: -1;
+}
+
+.bloom2 {
+    position: absolute;
+    top: 30%;
+    right: -45px;
+    z-index: -1;
 }
 
 .pageTitle {
@@ -60,4 +75,42 @@
     padding-bottom: 50px;
     border-top: 1px solid #fff;
     font-size: 24px;
+}
+
+@media (max-width: 1600px) {
+
+    .pageTitle {
+        font-size: 45px;
+    }
+    .qTitle {
+        font-size: 30px;
+    }
+
+    .open {
+        width: 50px;
+        height: 50px;
+    }
+
+    .answer {
+        font-size: 20px;
+    }
+
+    @media (max-width: 769px) {
+
+        .pageTitle {
+            font-size: 50px;
+        }
+        .qTitle {
+            font-size: 25px;
+        }
+
+        .open {
+            width: 40px;
+            height: 40px;
+        }
+
+        .answer {
+            font-size: 20px;
+        }
+    }
 }

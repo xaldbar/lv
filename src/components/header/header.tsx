@@ -1,9 +1,11 @@
 import styles from './header.module.css'
 import headerMenuButton from '../../assets/header-menu-button.svg'
 import logo from '../../assets/logo/logosvg.svg'
+import logo_s from '../../assets/logo/logo_s.svg'
 
 import {useEffect, useRef, useState} from 'react';
 import {useNavigate} from "react-router-dom";
+import {useWidth} from "../../hooks/use-width.ts";
 
 const isNode = (element: EventTarget | null): element is Node => {
 	return element instanceof Node;
@@ -71,6 +73,7 @@ const MenuButton: React.FC = () => {
 
 const Header = () => {
 	const navigate = useNavigate()
+	const width = useWidth()
 	const toInvest = () => {
 
 		const element = document.getElementById('footer_invoice');
@@ -82,6 +85,14 @@ const Header = () => {
 		navigate('/')
 	}
 
+	const getLogo = (): string => {
+		if (width < 769) {
+			return logo_s as string
+		}
+
+		return logo as string
+	}
+
 
 
 	return (
@@ -91,7 +102,7 @@ const Header = () => {
 					Инвестировать
 				</button>
 				<button onClick={toHome} className={styles.logo}>
-					<img src={logo} className={styles.logo}/>
+					<img src={getLogo()} className={styles.logoImg}/>
 				</button>
 				<MenuButton/>
 			</div>

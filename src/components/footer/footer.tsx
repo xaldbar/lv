@@ -130,11 +130,11 @@ const Footer: FC<FooterProps> = (props) => {
 					<div className={`${styles.separator} ${styles.separatorF}`}></div>
 					<div className={styles.footerContact}>
 						<img src={PhoneIcon} alt=""/>
-						<div>8 (800) 555 35 35</div>
+						<div>+7 (977) 102-10-57</div>
 					</div>
 					<div className={styles.footerContact}>
 						<img src={EmailIcon} alt=""/>
-						<div>почта@почта.ком </div>
+						<div>loonaventures@yandex.ru</div>
 					</div>
 				</div>
 			</div>

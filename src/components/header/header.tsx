@@ -1,5 +1,6 @@
 import styles from './header.module.css'
 import headerMenuButton from '../../assets/header-menu-button.svg'
+import headerMenuButton_m from '../../assets/menu-btn_m.svg'
 import logo from '../../assets/logo/logosvg.svg'
 import logo_s from '../../assets/logo/logom.svg'
 
@@ -54,6 +55,17 @@ const MenuButton: React.FC = () => {
 		toggleMenu()
 	}
 
+	const width = useWidth()
+
+
+	const getMenuBtnImage = (): string => {
+		if (width < 769) {
+			return headerMenuButton_m as string
+		}
+
+		return headerMenuButton as string
+	}
+
 	const toInvest = () => {
 
 		const element = document.getElementById('footer_invoice');
@@ -65,7 +77,7 @@ const MenuButton: React.FC = () => {
 	return (
 		<div className={styles.menuContainer}>
 			<button onClick={toggleMenu} className={styles.menuButton}>
-				<img src={headerMenuButton} className={styles.menuButtonImg}/>
+				<img src={getMenuBtnImage()} className={styles.menuButtonImg}/>
 			</button>
 			{isMenuOpen && (
 				<div ref={menuRef} className={styles.menuOptions}>
@@ -101,6 +113,7 @@ const Header = () => {
 
 		return logo as string
 	}
+
 
 	const handleScroll = () => {
 		if (window.scrollY > 0) {

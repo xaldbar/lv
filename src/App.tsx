@@ -19,11 +19,11 @@ const FOOTER_TILE_MAP: Record<string, string> = {
 }
 
 const PAGE_TITLE_MAP: Record<string, string> = {
-	'/': 'loonaventures',
-	'/faq': 'FAQ',
-	'/about': 'О компании',
-	'/portfolio': 'Портфолио',
-	'/how-we-work': 'Как мы работаем',
+	'/': 'Loona Ventures',
+	'/faq': 'Loona Ventures | FAQ',
+	'/about': 'Loona Ventures | О компании',
+	'/portfolio': 'Loona Ventures | Портфолио',
+	'/how-we-work': 'Loona Ventures | Как мы работаем',
 }
 
 function App() {

@@ -140,7 +140,7 @@ const Intro = () => {
 					<div>Венчур с нами —</div>
 					<div className={styles.introCapBtm}>
 						<div className={styles.www}>
-							удобно, понятно, прибыльно
+							удобно, понятно, безопасно
 							<div className={`${styles.bubble} ${styles.mb}`}></div>
 						</div>
 					</div>

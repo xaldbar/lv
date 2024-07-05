@@ -56,7 +56,7 @@ const projects: TableRowProps[] = [
 		logo: ScrollLogo,
 		name: 'Scroll',
 		sphere: 'L2',
-		round: 'KOL',
+		round: 'Venture',
 		href: 'https://scroll.io/',
 	},
 	{
@@ -70,14 +70,14 @@ const projects: TableRowProps[] = [
 		logo: OracleLogo,
 		name: 'Supra Oracle',
 		sphere: 'Oracle',
-		round: 'KOL',
+		round: 'Private',
 		href: 'https://supra.com/',
 	},
 	{
 		logo: FuelLogo,
 		name: 'Fuel',
-		sphere: 'Blockchain',
-		round: 'Venture',
+		sphere: 'L2',
+		round: 'Private',
 		href: 'https://fuel.network/',
 	},
 	{

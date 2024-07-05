@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, useState} from "react";
 import styles from './footer.module.css'
 import logo from '../../assets/logo/logosvg.svg'
 import logoS from '../../assets/logo/logo_s.svg'
@@ -8,6 +8,9 @@ import EmailIcon from '../../assets/footer/icons/Email.svg'
 import {motion} from "framer-motion";
 import {useWidth} from "../../hooks/use-width.ts";
 import {useNavigate} from "react-router-dom";
+import axios from 'axios';
+
+const CONNECTION_URL = 'https://sheet.best/api/sheets/ceb572e9-2490-4cba-9f06-401c98fe3d30'
 
 export interface InputProps {
 	type: 'text' | 'tel'
@@ -16,6 +19,8 @@ export interface InputProps {
 	htmlFor: string
 	label: string
 	pattern?: string
+	value: string
+	whenChange: (value: string) => void
 }
 
 export interface FooterProps {
@@ -25,7 +30,7 @@ export interface FooterProps {
 const FooterInput: FC<InputProps> = (props: InputProps) => {
 	return (
 		<div className={`${styles.inputGroup} ${styles.field}`}>
-			<input type={props.type} className={styles.formField} placeholder={props.placeholder} name={props.name} id={props.name} pattern={props.pattern} required/>
+			<input value={props.value} onChange={(e) => props.whenChange(e.target.value)} type={props.type} className={styles.formField} placeholder={props.placeholder} name={props.name} id={props.name} pattern={props.pattern} required/>
 			<label htmlFor={props.htmlFor} className={`${styles.formLabel}`}>{props.label}</label>
 		</div>
 	)
@@ -57,6 +62,38 @@ const Footer: FC<FooterProps> = (props) => {
 
 		return logo as string
 	}
+
+	const [name, setName] = useState('' )
+	const [tel, setTel] = useState('' )
+
+	const getPayload = () => {
+		return ({
+			'Имя': name,
+			'Телефон': tel,
+		})
+	}
+
+	const resetForm = () => {
+		setName('')
+		setTel('')
+	}
+
+	const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault()
+		axios.post(CONNECTION_URL, getPayload())
+		.then(() => {
+			resetForm()
+		})
+	}
+
+	const whenNameChange = (value: string) => {
+		setName(value)
+	}
+
+	const whenTelChange = (value: string) => {
+		setTel(value)
+	}
+
 	return (
 		<div id={'footer_invoice'} className={styles.footer}>
 			<div className={styles.footerTop}>
@@ -65,10 +102,12 @@ const Footer: FC<FooterProps> = (props) => {
 				<div className={styles.footerCaption}>
 					Оставьте заявку и менеджер свяжется {isMobile() ? <br/> : null} с вами в ближайшее время
 				</div>
-				<form action="" className={styles.footerForm}>
+				<form onSubmit={(e) => submitForm(e)} className={styles.footerForm}>
 					<div className={styles.inputs}>
 						<FooterInput
 							type={'text'}
+							value={name}
+							whenChange={whenNameChange}
 							placeholder={'Ваше имя'}
 							name={'name'}
 							htmlFor={'name'}
@@ -76,15 +115,17 @@ const Footer: FC<FooterProps> = (props) => {
 						/>
 						<FooterInput
 							type={'tel'}
+							value={tel}
+							whenChange={whenTelChange}
 							placeholder={'Номер телефона'}
 							name={'phone'}
 							htmlFor={'phone'}
 							label={'Номер телефона'}
-							pattern={'[0-9]{10}'}
+							pattern={'[0-9]{11}'}
 						/>
 					</div>
 					<div className={styles.bottom}>
-						<button className={styles.submit}>Получить консультацию</button>
+						<button type={'submit'} className={styles.submit}>Получить консультацию</button>
 						{!isMobile() ? (
 							<div className={styles.logo}>
 								<img src={logo} alt=""/>

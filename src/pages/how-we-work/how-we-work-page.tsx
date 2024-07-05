@@ -52,7 +52,9 @@ const HowWeWorkPage = () => {
 		const int = setInterval(animate, 6)
 		setTimeout(() => {
 			clearInterval(int)
-			imageRef.current.style.display = 'none'
+			if (imageRef.current) {
+				imageRef.current.style.display = 'none'
+			}
 		}, 5000)
 	}, [])
 

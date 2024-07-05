@@ -79,7 +79,6 @@ const HowWeWorkPage = () => {
 						{isMobile() ? (
 							<div className={styles.imageWrapper}>
 								<img src={g2} alt=""/>
-								<div ref={imageRef} className={styles.animate}></div>
 							</div>
 						) : null}
 						<div className={styles.ttItem}>

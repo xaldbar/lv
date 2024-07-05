@@ -196,10 +196,7 @@
 
 @media (max-width: 769px) {
     .howWeWorkPage {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 50px;
-        padding-bottom: 80px;
+        padding: 50px 15px 80px;
     }
     .text {
         flex-direction: column;

@@ -260,6 +260,10 @@
     margin-top: 10px;
 }
 
+.footerLink {
+    cursor: pointer;
+}
+
 @media (max-width: 1600px) {
     .footerTitle {
         font-size: 55px;

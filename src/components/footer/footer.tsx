@@ -7,6 +7,7 @@ import PhoneIcon from '../../assets/footer/icons/Phone.svg'
 import EmailIcon from '../../assets/footer/icons/Email.svg'
 import {motion} from "framer-motion";
 import {useWidth} from "../../hooks/use-width.ts";
+import {useNavigate} from "react-router-dom";
 
 export interface InputProps {
 	type: 'text' | 'tel'
@@ -32,6 +33,21 @@ const FooterInput: FC<InputProps> = (props: InputProps) => {
 
 const Footer: FC<FooterProps> = (props) => {
 	const width = useWidth()
+	const navigate = useNavigate()
+
+
+	const toHowToWork = () => {
+		navigate('/how-we-work')
+	}
+
+	const toAbout = () => {
+		navigate('/about')
+	}
+
+	const toPortfolio = () => {
+		navigate('/portfolio')
+	}
+
 	const isMobile = (): boolean => width < 769
 
 	const getLogo = (): string => {
@@ -121,9 +137,9 @@ const Footer: FC<FooterProps> = (props) => {
 				<div className={styles.fbCol}>
 					<div className={styles.foolterColTitle}>Компания:</div>
 					<div className={`${styles.separator} ${styles.separatorF}`}></div>
-					<div className={styles.ts}>Как мы работаем</div>
-					<div>О компании</div>
-					<div>Портфолио</div>
+					<div onClick={toHowToWork} className={`${styles.footerLink} ${styles.ts}`}>Как мы работаем</div>
+					<div onClick={toAbout} className={styles.footerLink}>О компании</div>
+					<div onClick={toPortfolio} className={styles.footerLink}>Портфолио</div>
 				</div>
 				<div className={styles.fbCol}>
 					<div className={styles.foolterColTitle}>Контакты:</div>

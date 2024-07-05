@@ -688,7 +688,7 @@
 }
 
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     .aboutPage {
         padding: 0 15px;
         padding-bottom: 100px;
@@ -787,6 +787,7 @@
         margin-top: 0;
         order: 1;
         margin-bottom: 90px;
+        text-align: center;
     }
 
     .siT {
@@ -794,19 +795,9 @@
         text-align: center;
     }
 
-    .pimg {
-        width: 376px;
-        height: 376px;
-        order: 0;
-    }
-
     .personText {
         font-size: 16px;
         order: 2;
-    }
-
-    .bloom4 {
-        left: -300px;
     }
 
     .personTextSecond {
@@ -815,7 +806,7 @@
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .valueItem {
         font-size: 16px;
         text-align: center;
@@ -848,6 +839,61 @@
         padding: 8px 8px;
         margin-top: 50px;
         margin-left: calc(50% - 315px + 140px);
+    }
+
+    .date {
+        border-radius: 10px;
+        text-align: center;
+        width: 160px;
+        padding: 8px 0;
+        font-size: 18px;
+    }
+
+    .tblockText {
+        font-size: 14px;
+    }
+
+    .fbdate {
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .tbdate {
+        margin-left: 10px;
+    }
+    .fibdate {
+        margin-left: 10px;
+    }
+    .sbdate,
+    .fobdate,
+    .sibdate {
+        margin-left: 10px;
+    }
+
+    .fbl {
+        row-gap: 25px;
+    }
+
+    .sbl {
+        row-gap: 20px;
+    }
+
+    .tbl,
+    .fobl,
+    .fibl,
+    .sibl {
+        row-gap: 20px;
+    }
+
+    .fbText,
+    .sbtext,
+    .tbtext,
+    .fobtext,
+    .fibText {
+        margin-left: 15px;
+    }
+
+    .sibtext {
+        margin-left: 20px;
     }
 }
 

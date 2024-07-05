@@ -124,6 +124,10 @@
         height: auto;
     }
 
+    .menuButtonImg {
+        height: auto;
+    }
+
     .menuButton {
         padding: 0;
         border-radius: 10px;

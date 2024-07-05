@@ -815,4 +815,40 @@
 }
 
 
+@media (max-width: 400px) {
+    .valueItem {
+        font-size: 16px;
+        text-align: center;
+        padding: 8px 20px;
+    }
+
+    .fi {
+        width: 280px;
+        margin-top: 15px;
+        margin-left: calc(50% - 315px + 170px);
+    }
+
+    .si {
+        margin-top: 27px;
+        margin-left: calc(50% - 315px + 120px);
+    }
+
+    .ti {
+        margin-top: 18px;
+        margin-left: calc(50% - 315px + 350px);
+    }
+
+    .foi {
+        margin-top: 0;
+        margin-left: calc(50% - 315px + 140px);
+    }
+
+    .fai {
+        width: 350px;
+        padding: 8px 8px;
+        margin-top: 50px;
+        margin-left: calc(50% - 315px + 140px);
+    }
+}
+
 

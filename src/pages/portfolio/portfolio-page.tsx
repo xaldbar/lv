@@ -127,7 +127,7 @@ const PortfolioPage = () => {
 				Портфолио
 			</div>
 			<div className={`${styles.tableRow} ${styles.tableHead}`}>
-				<div>Проект</div>
+				<div className={styles.projectName}>Проект</div>
 				<div>Сфера</div>
 				<div>Раунд</div>
 			</div>

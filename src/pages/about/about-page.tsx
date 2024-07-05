@@ -224,7 +224,7 @@ const Timeline = () => {
 					transition={{ duration: 0.9 }}
 					viewport={{ amount: 0.5, once: true }}
 					className={`${styles.tblockText} ${styles.fibText}`}>
-					вышли на рынок OTC и открыли новые направления в HFT, Pre-IPO
+					Вышли на рынок OTC и открыли новые направления в HFT, Pre-IPO
 				</motion.div>
 				<div className={styles.fblB}></div>
 			</div>

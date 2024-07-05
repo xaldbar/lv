@@ -1,7 +1,7 @@
 .portfolioPage {
     position: relative;
     z-index: 51;
-    margin: 0 45px;
+    padding: 0 45px;
     color: #fff;
 }
 
@@ -135,5 +135,51 @@
 
     .portfolioHeader {
         font-size: 50px;
+    }
+}
+
+@media (max-width: 550px) {
+    .tableRow.tableHead {
+        padding: 4px 8px;
+        font-size: 13px;
+        height: 40px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .portfolioPage {
+        padding: 0 15px;
+        overflow: hidden;
+    }
+
+    .projectName img {
+        transform: scale(0.8);
+    }
+
+    .tableRow {
+        font-size: 13px;
+        font-weight: 400;
+        padding-left: 8px;
+        height: 40px;
+        column-gap: 8px;
+    }
+
+    .projectName {
+        width: 100px;
+        column-gap: 2px;
+    }
+
+    .caption {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .portfolioHeader {
+        font-size: 45px;
+    }
+
+    .rowLink {
+        width: 47px;
+        height: 47px;
     }
 }

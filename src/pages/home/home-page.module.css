@@ -109,7 +109,7 @@
 
 .bloom3 {
     position: absolute;
-    bottom: -340px;
+    top: 1050px;
     left: -25px;
     z-index: 1;
 }

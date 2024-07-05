@@ -138,6 +138,17 @@
     -ms-user-select: none;
 }
 
+.formStatusText {
+    z-index: 5;
+    font-size: 40px;
+}
+
+.formStatusWrapper {
+    height: 277px;
+    width: 100%;
+    position: relative;
+}
+
 .bloom img {
     width: 100%;
     height: 100%;
@@ -166,6 +177,11 @@
     width: 115px;
     height: 115px;
     z-index: 0;
+}
+
+.lb.success {
+
+    right: 0;
 }
 
 .mb {
@@ -298,6 +314,12 @@
         left: -10px;
     }
 
+    .lb.success {
+
+        right: 0;
+    }
+
+
     .mb {
         top: 260px;
         z-index: 0;
@@ -328,6 +350,12 @@
         margin-top: 35px;
         margin-left: 0;
     }
+
+    .formStatusText {
+        font-size: 20px;
+        text-align: center;
+    }
+
 
     .submit {
         font-size: 22px;

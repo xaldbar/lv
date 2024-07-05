@@ -169,11 +169,6 @@ const Intro = () => {
 					<button onClick={toHww} className={`${styles.aboutBtn} ${styles.invert}`}>Как мы работаем?</button>
 					<button onClick={toAbout} className={`${styles.aboutBtn} ${styles.aboutBtnS}`}>О компании</button>
 					<button onClick={toPortfolio} className={`${styles.aboutBtn} ${styles.aboutBtnT}`}>Портфолио</button>
-					{isMobile() ? null : (
-						<div className={styles.bloom3}>
-							<img src={bloom3} alt=""/>
-						</div>
-					)}
 				</div>
 				<div className={styles.aboutBR}>
 					<div className={styles.aboutBRT}>
@@ -193,6 +188,11 @@ const Intro = () => {
 			<div className={styles.bloom2}>
 				<img src={bloom2} alt=""/>
 			</div>
+			{isMobile() ? null : (
+				<div className={styles.bloom3}>
+					<img src={bloom3} alt=""/>
+				</div>
+			)}
 		</div>
 	)
 }

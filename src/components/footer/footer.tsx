@@ -1,4 +1,4 @@
-import {FC, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import styles from './footer.module.css'
 import logo from '../../assets/logo/logosvg.svg'
 import logoS from '../../assets/logo/logo_s.svg'
@@ -11,6 +11,15 @@ import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 
 const CONNECTION_URL = 'https://sheet.best/api/sheets/ceb572e9-2490-4cba-9f06-401c98fe3d30'
+//const CONNECTION_URL = 'https://sheet.best/api/sheets/db680c7d-12a7-4c6b-8732-93981f2f26dc'
+const SUCCESS_SUBMIT_TITLE = 'Спасибо! Все прошло успешно'
+const ERROR_SUBMIT_TITLE = 'Произошла ошибка, попробуйте снова'
+
+type FormStatus = 'default' | 'success' | 'error'
+const FORM_TITLE_MAP: Partial<Record<FormStatus, string>> = {
+	'success': SUCCESS_SUBMIT_TITLE,
+	'error': ERROR_SUBMIT_TITLE,
+}
 
 export interface InputProps {
 	type: 'text' | 'tel'
@@ -65,6 +74,7 @@ const Footer: FC<FooterProps> = (props) => {
 
 	const [name, setName] = useState('' )
 	const [tel, setTel] = useState('' )
+	const [formStatus, setFormStatus] = useState<FormStatus>('default')
 
 	const getPayload = () => {
 		return ({
@@ -83,6 +93,10 @@ const Footer: FC<FooterProps> = (props) => {
 		axios.post(CONNECTION_URL, getPayload())
 		.then(() => {
 			resetForm()
+			setFormStatus('success')
+		}).catch(() => {
+			resetForm()
+			setFormStatus('error')
 		})
 	}
 
@@ -94,44 +108,75 @@ const Footer: FC<FooterProps> = (props) => {
 		setTel(value)
 	}
 
+	const [title, setTitle] = useState(props.title)
+
+	useEffect(() => {
+		setTitle(FORM_TITLE_MAP[formStatus] ?? props.title)
+	}, [formStatus])
+
+	const renderFormContent = () => {
+		switch (formStatus) {
+			case "default":
+				return (
+					<>
+						<div className={styles.inputs}>
+							<FooterInput
+								type={'text'}
+								value={name}
+								whenChange={whenNameChange}
+								placeholder={'Ваше имя'}
+								name={'name'}
+								htmlFor={'name'}
+								label={'Ваше имя'}
+							/>
+							<FooterInput
+								type={'tel'}
+								value={tel}
+								whenChange={whenTelChange}
+								placeholder={'Номер телефона'}
+								name={'phone'}
+								htmlFor={'phone'}
+								label={'Номер телефона'}
+								pattern={'[0-9]{11}'}
+							/>
+						</div>
+						<div className={styles.bottom}>
+							<button type={'submit'} className={styles.submit}>Получить консультацию</button>
+							{!isMobile() ? (
+								<div className={styles.logo}>
+									<img src={logo} alt=""/>
+								</div>
+							) : null}
+						</div>
+					</>
+				)
+			case "error":
+				return (
+					<div className={styles.formStatusWrapper}>
+						<div className={styles.formStatusText}>Произошла ошибка, попробуйте снова</div>
+					</div>
+				)
+			case "success":
+				return (
+					<div className={styles.formStatusWrapper}>
+						<div className={styles.formStatusText}>Данные приняты. Ожидайте звонка менеджера</div>
+					</div>
+				)
+		}
+	}
+
 	return (
 		<div id={'footer_invoice'} className={styles.footer}>
 			<div className={styles.footerTop}>
-				<div className={styles.footerTitle}>{props.title}</div>
+				<div className={styles.footerTitle}>{title}</div>
 				{!isMobile() ? <div className={styles.separator}></div> : null}
-				<div className={styles.footerCaption}>
-					Оставьте заявку и менеджер свяжется {isMobile() ? <br/> : null} с вами в ближайшее время
-				</div>
+				{formStatus === 'default' ? (
+					<div className={styles.footerCaption}>
+						Оставьте заявку и менеджер свяжется {isMobile() ? <br/> : null} с вами в ближайшее время
+					</div>
+				) : null}
 				<form onSubmit={(e) => submitForm(e)} className={styles.footerForm}>
-					<div className={styles.inputs}>
-						<FooterInput
-							type={'text'}
-							value={name}
-							whenChange={whenNameChange}
-							placeholder={'Ваше имя'}
-							name={'name'}
-							htmlFor={'name'}
-							label={'Ваше имя'}
-						/>
-						<FooterInput
-							type={'tel'}
-							value={tel}
-							whenChange={whenTelChange}
-							placeholder={'Номер телефона'}
-							name={'phone'}
-							htmlFor={'phone'}
-							label={'Номер телефона'}
-							pattern={'[0-9]{11}'}
-						/>
-					</div>
-					<div className={styles.bottom}>
-						<button type={'submit'} className={styles.submit}>Получить консультацию</button>
-						{!isMobile() ? (
-							<div className={styles.logo}>
-								<img src={logo} alt=""/>
-							</div>
-						) : null}
-					</div>
+					{renderFormContent()}
 				</form>
 				{!isMobile() ? <div className={styles.separator}></div> : null}
 				<div className={styles.bloom}>

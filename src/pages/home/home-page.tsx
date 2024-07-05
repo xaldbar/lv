@@ -126,18 +126,14 @@ const Intro = () => {
 				<div className={styles.introTitle}>
 					<div className={styles.titleText}>
 						<div className={styles.ttt}>LOONA VENTURES</div>
-						{!isMobile() ? (
-							<>
-								<motion.div
-									animate={{
-										top: isMobile() ? ['-130px', '-140px', '-130px'] : ['-110px', '-120px', '-110px'],
-									}}
-									transition={{repeat: Infinity, duration: 4}}
-									className={`${styles.bubble} ${styles.lb}`}
-								></motion.div>
-								<div className={`${styles.bubble} ${styles.rb}`}></div>
-							</>
-						) : null}
+							<motion.div
+								animate={{
+									top: isMobile() ? ['-130px', '-140px', '-130px'] : ['-110px', '-120px', '-110px'],
+								}}
+								transition={{repeat: Infinity, duration: 4}}
+								className={`${styles.bubble} ${styles.lb}`}
+							></motion.div>
+							<div className={`${styles.bubble} ${styles.rb}`}></div>
 					</div>
 				</div>
 				<div className={styles.introCaption}>
@@ -145,7 +141,7 @@ const Intro = () => {
 					<div className={styles.introCapBtm}>
 						<div className={styles.www}>
 							удобно, понятно, прибыльно
-							{!isMobile() ? (<div className={`${styles.bubble} ${styles.mb}`}></div>) : null}
+							<div className={`${styles.bubble} ${styles.mb}`}></div>
 						</div>
 					</div>
 
@@ -189,17 +185,14 @@ const Intro = () => {
 				</div>
 			</motion.div>
 
-
-			{!isMobile() ? (
-				<>
-					<div className={styles.bloom1}>
-						<img src={bloom1} alt=""/>
-					</div>
-					<div className={styles.bloom2}>
-						<img src={bloom2} alt=""/>
-					</div>
-				</>
-			) : null}
+			{isMobile() ? null : (
+				<div className={styles.bloom1}>
+					<img src={bloom1} alt=""/>
+				</div>
+			)}
+			<div className={styles.bloom2}>
+				<img src={bloom2} alt=""/>
+			</div>
 		</div>
 	)
 }

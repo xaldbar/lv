@@ -570,6 +570,8 @@
 @media (max-width: 769px) {
     .aboutPage {
         padding-top: 100px;
+        padding-bottom: 100px;
+        overflow: hidden;
     }
 
     .pageTitle {
@@ -684,3 +686,133 @@
         left: -300px;
     }
 }
+
+
+@media (max-width: 550px) {
+    .aboutPage {
+        padding: 0 15px;
+        padding-bottom: 100px;
+    }
+    .pageTitle {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .quotes {
+
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .fbbl {
+        left: -200px;
+    }
+
+    .sq,
+    .tq,
+    .fq {
+        margin-left: 0;
+    }
+
+    .valuesTitle {
+        font-size: 45px;
+    }
+
+    .circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .valueItem {
+        font-size: 18px;
+        text-align: center;
+        padding: 10px 26px;
+    }
+
+    .fi {
+        width: 300px;
+        margin-top: 15px;
+        margin-left: calc(50% - 315px + 170px);
+    }
+
+    .si {
+        margin-top: 27px;
+        margin-left: calc(50% - 315px + 100px);
+    }
+
+    .ti {
+        margin-top: 18px;
+        margin-left: calc(50% - 315px + 350px);
+    }
+
+    .foi {
+        margin-top: 0;
+        margin-left: calc(50% - 315px + 120px);
+    }
+
+    .fai {
+        width: 375px;
+        padding: 8px 8px;
+        margin-top: 50px;
+        margin-left: calc(50% - 315px + 120px);
+    }
+
+    .date {
+        border-radius: 10px;
+        text-align: center;
+        width: 180px;
+        padding: 10px 0;
+        font-size: 20px;
+    }
+
+    .tblockText {
+        font-size: 20px;
+    }
+
+    .fibl {
+        margin-top: 50px;
+    }
+
+    .sevbl {
+        height: 150px;
+    }
+
+    .person {
+        column-gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .piT {
+        margin-top: 0;
+        order: 1;
+        margin-bottom: 90px;
+    }
+
+    .siT {
+        margin-bottom: 90px;
+        text-align: center;
+    }
+
+    .pimg {
+        width: 376px;
+        height: 376px;
+        order: 0;
+    }
+
+    .personText {
+        font-size: 16px;
+        order: 2;
+    }
+
+    .bloom4 {
+        left: -300px;
+    }
+
+    .personTextSecond {
+        margin-left: 0;
+    }
+}
+
+
+

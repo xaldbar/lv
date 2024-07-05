@@ -9,6 +9,7 @@ import bloom1 from '../../assets/hww/bloom1.svg'
 import bloom2 from '../../assets/hww/bloom2.svg'
 import bloom3 from '../../assets/hww/bloom3.svg'
 import {useInView} from "framer-motion";
+import {useWidth} from "../../hooks/use-width.ts";
 
 const HowWeWorkPage = () => {
 	const imageRef = useRef<HTMLDivElement>(null)
@@ -22,6 +23,8 @@ const HowWeWorkPage = () => {
 	const is4InView = useInView(step4Ref, {amount: 0.7})
 
 	const [step, setStep] = useState(1)
+	const width = useWidth()
+
 
 	useEffect(() => {
 		if (is1InView) {
@@ -51,11 +54,16 @@ const HowWeWorkPage = () => {
 			clearInterval(int)
 		}, 5000)
 	}, [])
+
+	const isMobile = () => width < 769
+
 	return (
 		<div className={styles.howWeWorkPage}>
-			<div className={styles.bloom1}>
-				<img src={bloom1} alt=""/>
-			</div>
+			{!isMobile() ? (
+				<div className={styles.bloom1}>
+					<img src={bloom1} alt=""/>
+				</div>
+			) : null}
 			<div className={styles.text}>
 				<div className={styles.textLeft}>
 					<div className={styles.textTitle}>Как мы работаем?</div>
@@ -65,6 +73,12 @@ const HowWeWorkPage = () => {
 							Мы понимаем это и поэтому подробно рассказываем каждому клиенту как мы работаем, стараясь
 							донести все подробности лично
 						</div>
+						{isMobile() ? (
+							<div className={styles.imageWrapper}>
+								<img src={g2} alt=""/>
+								<div ref={imageRef} className={styles.animate}></div>
+							</div>
+						) : null}
 						<div className={styles.ttItem}>
 							Ниже вы можете ознакомиться с общей схемой, которая объясняет, где заложена прибыль <br/>
 							Если коротко — мы получаем возможность заходить в проекты до их листинга на бирже, во время
@@ -76,10 +90,12 @@ const HowWeWorkPage = () => {
 						</div>
 					</div>
 				</div>
-				<div className={styles.imageWrapper}>
-					<img src={g2} alt=""/>
-					<div ref={imageRef} className={styles.animate}></div>
-				</div>
+				{!isMobile() ? (
+					<div className={styles.imageWrapper}>
+						<img src={g2} alt=""/>
+						<div ref={imageRef} className={styles.animate}></div>
+					</div>
+				) : null}
 			</div>
 			<div className={styles.content}>
 				<div className={styles.textContent}>
@@ -99,6 +115,9 @@ const HowWeWorkPage = () => {
 								Наличие идеи, конечно, важно, но важнее – условия по срокам, цене и иным <br/>параметрам,
 								которые нам предлагают <br/> Мы ищем наиболее выгодные комбинации условий
 							</div>
+							{isMobile() ? (
+								<img className={styles.sliderImage} src={step1} alt=""/>
+							) : null}
 							<div className={styles.textBlockTextItem}>
 								До нас в проект уже проинвестировали крупные Tier-1 фонды, бизнес-ангелы, <br/> топ
 								менеджеры или крупные частные инвесторы <br/> Для нас они являются контрагенатми
@@ -126,6 +145,9 @@ const HowWeWorkPage = () => {
 								Но существует мехаxнизм внебиржевого OTC рынка, где такие агенты могут <br/> перепродать
 								свою долю, чтобы выйти в деньги
 							</div>
+							{isMobile() ? (
+								<img className={styles.sliderImage} src={step2} alt=""/>
+							) : null}
 							<div className={styles.textBlockTextItem}>
 								Их мотивация заключается в том, что они заходили в проект на оценке сильно ниже <br/>той,
 								которая сейчас считается рыночной и той, по которой они готовы продать свою <br/>долю
@@ -135,9 +157,11 @@ const HowWeWorkPage = () => {
 								получая токены ниже рыночной и будущей цены проекта
 							</div>
 						</div>
-						<div className={styles.bloom2}>
-							<img src={bloom2} alt=""/>
-						</div>
+						{!isMobile() ? (
+							<div className={styles.bloom2}>
+								<img src={bloom2} alt=""/>
+							</div>
+						) : null}
 					</div>
 
 					<div ref={step3Ref} className={styles.textBlock}>
@@ -156,6 +180,9 @@ const HowWeWorkPage = () => {
 								агентствам, предлагая им купить токены из их доли ниже цены листинга, взамен чего <br/>
 								будет необходимо пиарить проект в социальных сетях
 							</div>
+							{isMobile() ? (
+								<img className={styles.sliderImage} src={step3} alt=""/>
+							) : null}
 							<div className={styles.textBlockTextItem}>
 								Из-за того, что проектов на рынке очень много и лимиты большие, маркетинговые <br/>
 								агентства и инфлюенсеры сами не могу их все время закрывать
@@ -187,6 +214,9 @@ const HowWeWorkPage = () => {
 								блокчейна: каждый агент в схеме, начиная от инвестора и заканчивая проектом может <br/>
 								отслеживать трансакции, видя, куда ушли деньги
 							</div>
+							{isMobile() ? (
+								<img className={styles.sliderImage} src={step4} alt=""/>
+							) : null}
 							<div className={styles.textBlockTextItem}>
 								Мы же, после получения токенов, продаём их на бирже и пересылаем прибыль нашим <br/>
 								клиентам <br/>
@@ -196,15 +226,19 @@ const HowWeWorkPage = () => {
 						</div>
 					</div>
 				</div>
-				<div className={styles.slider}>
-					{step === 1 ? <img className={styles.sliderImage} src={step1} alt=""/> : null}
-					{step === 2 ? <img className={styles.sliderImage} src={step2} alt=""/> : null}
-					{step === 3 ? <img className={styles.sliderImage} src={step3} alt=""/> : null}
-					{step === 4 ? <img className={styles.sliderImage} src={step4} alt=""/> : null}
-				</div>
-				<div className={styles.bloom3}>
-					<img src={bloom3} alt=""/>
-				</div>
+				{!isMobile() ? (
+					<div className={styles.slider}>
+						{step === 1 ? <img className={styles.sliderImage} src={step1} alt=""/> : null}
+						{step === 2 ? <img className={styles.sliderImage} src={step2} alt=""/> : null}
+						{step === 3 ? <img className={styles.sliderImage} src={step3} alt=""/> : null}
+						{step === 4 ? <img className={styles.sliderImage} src={step4} alt=""/> : null}
+					</div>
+				) : null}
+				{!isMobile() ? (
+					<div className={styles.bloom3}>
+						<img src={bloom3} alt=""/>
+					</div>
+				) : null}
 			</div>
 		</div>
 	);

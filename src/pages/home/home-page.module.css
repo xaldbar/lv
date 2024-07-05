@@ -4,9 +4,12 @@
     min-height: 100vh;
     color: white;
     padding-bottom: 137px;
+    overflow: hidden;
 }
 
 .intro {
+    /*position: relative;*/
+    /*overflow: hidden;*/
 }
 
 .introTitle {
@@ -91,6 +94,7 @@
 }
 
 .bloom1 {
+    z-index: 1;
     position: absolute;
     top: -20px;
     left: -45px;
@@ -548,9 +552,9 @@
         left: -48px;
     }
 
-    .rb {
-
-    }
+    /*.rb {*/
+    /*    */
+    /*}*/
 
     .aboutB {
         display: flex;

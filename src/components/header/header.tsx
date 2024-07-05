@@ -1,7 +1,7 @@
 import styles from './header.module.css'
 import headerMenuButton from '../../assets/header-menu-button.svg'
 import logo from '../../assets/logo/logosvg.svg'
-import logo_s from '../../assets/logo/logo_s.svg'
+import logo_s from '../../assets/logo/logom.svg'
 
 import {useEffect, useRef, useState} from 'react';
 import {useNavigate} from "react-router-dom";

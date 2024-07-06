@@ -11,8 +11,8 @@ import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 import {format} from "date-fns";
 
-// const CONNECTION_URL = 'https://sheet.best/api/sheets/ceb572e9-2490-4cba-9f06-401c98fe3d30'
-const CONNECTION_URL = 'https://sheet.best/api/sheets/db680c7d-12a7-4c6b-8732-93981f2f26dc'
+const CONNECTION_URL = 'https://sheet.best/api/sheets/ceb572e9-2490-4cba-9f06-401c98fe3d30'
+// const CONNECTION_URL = 'https://sheet.best/api/sheets/db680c7d-12a7-4c6b-8732-93981f2f26dc'
 const SUCCESS_SUBMIT_TITLE = 'Спасибо! Все прошло успешно'
 const ERROR_SUBMIT_TITLE = 'Произошла ошибка, попробуйте снова'
 

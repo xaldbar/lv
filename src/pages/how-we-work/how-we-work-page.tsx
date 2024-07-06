@@ -3,12 +3,16 @@ import g2 from '../../assets/hww/g2.png'
 import {useEffect, useRef, useState} from "react";
 import step1 from '../../assets/hww/step1.svg'
 import step1_m from '../../assets/hww/step1_m.svg'
+import step1_3 from '../../assets/hww/step1_3.svg'
 import step2 from '../../assets/hww/step2.svg'
 import step2_m from '../../assets/hww/step2_m.svg'
+import step2_3 from '../../assets/hww/step2_3.svg'
 import step3 from '../../assets/hww/step3.svg'
 import step3_m from '../../assets/hww/step3_m.svg'
+import step3_3 from '../../assets/hww/step3_3.svg'
 import step4 from '../../assets/hww/step4.svg'
 import step4_m from '../../assets/hww/step4_m.svg'
+import step4_3 from '../../assets/hww/step4_3.svg'
 import bloom1 from '../../assets/hww/bloom1.svg'
 import bloom2 from '../../assets/hww/bloom2.svg'
 import bloom3 from '../../assets/hww/bloom3.svg'
@@ -65,6 +69,20 @@ const HowWeWorkPage = () => {
 			}
 		}, 5000)
 	}, [])
+
+	const getStepMobileImg = (step: 1 | 2 | 3 | 4) => {
+		const isM = width < 550
+		switch (step) {
+			case 1:
+				return isM ? step1_3 : step1_m
+			case 2:
+				return isM ? step2_3 : step2_m
+			case 3:
+				return isM ? step3_3 : step3_m
+			case 4:
+				return isM ? step4_3 : step4_m
+		}
+	}
 
 	const isMobile = () => width < 769
 
@@ -126,7 +144,7 @@ const HowWeWorkPage = () => {
 								которые нам предлагают <br/> Мы ищем наиболее выгодные комбинации условий
 							</div>
 							{isMobile() ? (
-								<img className={styles.sliderImage} src={step1_m} alt=""/>
+								<img className={styles.sliderImage} src={getStepMobileImg(1)} alt=""/>
 							) : null}
 							<div className={styles.textBlockTextItem}>
 								До нас в проект уже проинвестировали крупные Tier-1 фонды, бизнес-ангелы, <br/> топ
@@ -156,7 +174,7 @@ const HowWeWorkPage = () => {
 								свою долю, чтобы выйти в деньги
 							</div>
 							{isMobile() ? (
-								<img className={styles.sliderImage} src={step2_m} alt=""/>
+								<img className={styles.sliderImage} src={getStepMobileImg(2)} alt=""/>
 							) : null}
 							<div className={styles.textBlockTextItem}>
 								Их мотивация заключается в том, что они заходили в проект по оценке сильно ниже <br/>той,
@@ -191,7 +209,7 @@ const HowWeWorkPage = () => {
 								будет необходимо пиарить проект в социальных сетях
 							</div>
 							{isMobile() ? (
-								<img className={styles.sliderImage} src={step3_m} alt=""/>
+								<img className={styles.sliderImage} src={getStepMobileImg(3)} alt=""/>
 							) : null}
 							<div className={styles.textBlockTextItem}>
 								Из-за того, что проектов на рынке очень много и лимиты большие, маркетинговые
@@ -225,7 +243,7 @@ const HowWeWorkPage = () => {
 								отслеживать транзакции, видя, куда ушли деньги
 							</div>
 							{isMobile() ? (
-								<img className={styles.sliderImage} src={step4_m} alt=""/>
+								<img className={styles.sliderImage} src={getStepMobileImg(4)} alt=""/>
 							) : null}
 							<div className={styles.textBlockTextItem}>
 								Мы же, после получения токенов, продаём их на бирже и пересылаем прибыль нашим
